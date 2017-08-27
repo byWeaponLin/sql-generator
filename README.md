@@ -15,23 +15,23 @@ for example: SELECT name, age, gender FROM user WHERE avg(age) > 20 for last 10 
 
 ## 抽象
 首先我们需要抽象，观察一下select、from、where、for-last四个部分的特定：
-> select part: 1.column, 2.column as alias_name, 3.aggregate_function(column) as alias_name
-> from part: table_name
-> where part: left compare(>,<,=...) right, left和right部分可以是function/placeholder/numeric，function中也可以是字段、函数、四则运算等等
-> for last part: x min/events
+> **select part**: 1.column, 2.column as alias_name, 3.aggregate_function(column) as alias_name <br/>
+> **from part**: table_name <br/>
+> **where part**: left compare(>,<,=...) right, left和right部分可以是function/placeholder/numeric，function中也可以是字段、函数、四则运算等等 <br/>
+> **for last part**: x min/events <br/>
 
-然后展示一下设计之后的类图:
+然后展示一下设计之后的类结构图: 
+![nothing](/img/2017-08-27-sql-generator-s.png)
 
 解释一下每个类大概是干什么的：
-> `NameOperand` : 抽象类，包含了name字段，以及自定义了toString(boolean)方法，boolean参数的原因是有些地方可能需要别名(select部分)，而有些地方就不需要(where部分)
-> --`ColumnOperand` ： 顾名思义，这是一个代表字段的类
-> --`TransformOperand` ： 这是where部分的抽象类，定义了四则运算，以及比较的方法
-> ----`CalculateOperand` ： 四则运算，+，-，*,/
-> ----`NumberOperand` ： 数值，比如： 19,29.2
-> ----`VariableOperand` ： 占位符，比如： ?avg_age
-> ----`FunctionOperand` ： 聚合函数， `sum` ,`avg` , `count` , `max` , `min` ，比如： sum(ColumnOperand)
-> ----`PeriodOperand` ： 自定义函数
-> ----`` ： 
+> `NameOperand` : 抽象类，包含了name字段，以及自定义了toString(boolean)方法，boolean参数的原因是有些地方可能需要别名(select部分)，而有些地方就不需要(where部分) <br/>
+> --`ColumnOperand` ： 顾名思义，这是一个代表字段的类 <br/>
+> --`TransformOperand` ： 这是where部分的抽象类，定义了四则运算，以及比较的方法 <br/>
+> ----`CalculateOperand` ： 四则运算，+，-，*,/ <br/>
+> ----`NumberOperand` ： 数值，比如： 19,29.2 <br/>
+> ----`VariableOperand` ： 占位符，比如： ?avg_age <br/>
+> ----`FunctionOperand` ： 聚合函数， `sum` ,`avg` , `count` , `max` , `min` ，比如： sum(ColumnOperand) <br/>
+> ----`PeriodOperand` ： 自定义函数 <br/>
 > --`BitwiseOperand` ： condition类，每个 `BitwiseOperand` 都是where部分的一个condition  
 
 
@@ -85,16 +85,9 @@ public CalculateOperator usage(TransformOperand left, String operator, Transform
 ```
 
 
-### what is functional programming?
-
-可以把函数理解为一个对象，
-
-
 ## stream
 java stream的操作
-### reduce
 
-### 
 
 
 
