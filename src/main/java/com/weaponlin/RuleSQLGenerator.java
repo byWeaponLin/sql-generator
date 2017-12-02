@@ -1,20 +1,45 @@
 package com.weaponlin;
 
-import com.weaponlin.dsl.builder.SelectBuilder;
+import com.google.common.collect.Lists;
+import com.weaponlin.AlertBasicSeverityLevel.Condition;
+import com.weaponlin.enums.Comparator;
+import com.weaponlin.enums.Threshold;
 
-import static com.weaponlin.dsl.operand.ColumnOperand.name;
-import static com.weaponlin.dsl.operand.FunctionOperand.avg;
-import static com.weaponlin.dsl.operand.NumberOperand.num;
+import java.util.List;
+
+import static com.weaponlin.enums.AlertAlgorithm.AVG;
+import static com.weaponlin.enums.AlertAlgorithm.SUM;
+import static com.weaponlin.enums.Threshold.STATIC;
+import static com.weaponlin.enums.Threshold.SubThreshold.*;
 
 public class RuleSQLGenerator {
 
     public static void main(String[] args) {
-        String sql = SelectBuilder.select()
-                .column("name, age, gender")
-                .from("user")
-                .where().and(avg(name("age")).gt(num(20)))
-                .forEvents(10).build();
-
+        AlertBasicSeverityLevel severityLevel = new AlertBasicSeverityLevel()
+                .setRuleId("rule_id")
+                .setBoth(true)
+                .setSeverity("warning")
+                .setLastTime(10)
+                .setThreshold(STATIC)
+                .setConditions(conditions());
+        String sql = SqlCreatorFactory.generateSql(severityLevel);
         System.out.println(sql);
+    }
+
+    private static List<Condition> conditions() {
+        return Lists.newArrayList(
+                new Condition()
+                        .setSubThreshold(FREQUENCY)
+                        .setMetric("CpuUsage")
+                        .setAlgorithm(SUM)
+                        .setOperator(Comparator.GT)
+                        .setCount(0.80),
+                new Condition()
+                        .setSubThreshold(Threshold.SubThreshold.NUMERICAL)
+                        .setMetric("MemoryUsage")
+                        .setAlgorithm(AVG)
+                        .setOperator(Comparator.GT)
+                        .setCount(2048.0)
+                );
     }
 }
