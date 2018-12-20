@@ -30,7 +30,7 @@
     x min/events
 
 ### 2.1 类结构图: 
-![sql-generator-class-structure](images/sql-generator-class-structure.png)
+![sql-generator-class-structure](/img/2017-08-27-sql-generator-s.png)
 解释一下每个类的作用:
 * `NameOperand`: 抽象类,包含了name字段,以及自定义了toString(boolean)方法,boolean参数的原因是有些地方可能需要别名(select部分),而有些地方就不需要(where部分)
 * `ColumnOperand`： 顾名思义,这是一个代表字段的类
