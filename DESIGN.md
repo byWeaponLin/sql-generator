@@ -32,7 +32,7 @@ select().column("id").column("name").column("score")
     .build();
 // ==> select id, name, socre from students;
 
-select().column("id").column("name").column("score")
+select().column("id","name","score")
     .from("students")
     .where().and(column("class_id").eq(11))
     .orderBy(column("score"))
@@ -71,7 +71,7 @@ select().columns()
     .where().and(column("name").like('%zhang')).and(column('class_id').in(1,2,3,4)).and(column("score").between(60, 100))
     .limit(100)
     .build();
-// ==> select * from students where name like '%zhang' and class_id in (1,2,3,4) and score between 60 and 100 limit 100;    
+// ==> select * from students where name like '%zhang' and class_id in (1,2,3,4) and score between 60 and 100 limit 100;
 
 select().columns()
     .from("students")
@@ -81,6 +81,13 @@ select().columns()
     .limit(10, 10)
     .build();
 // ==> select * from students where class_id = 1 order by score desc limit 10, 10;
+
+select().columns()
+    .from("students")
+    .where().and(column("class_id").eq(1)).and(expression().or(column("age").gt(20)).or(column("score").le(90)))
+    .build();
+
+// ==> select * from students where class_id = 1 and (age > 20 or score <= 90)
 ```
 
 ### 1.2 insert
@@ -134,4 +141,17 @@ delete().from("students")
 // ==> delete from students where score < 60 or age > 22;
 ```
 
-## 2. 类设计图
+## 2. 抽象
+
+## 2.1 Operand(操作数)
+- column
+- aggregate/inner function
+- arithmetic expression
+
+## 2.2 Expression(表达式)
+- <, > , = , >= , <= 
+- in , not in 
+- is null, is not null
+- child expression(内嵌子表达式)
+
+## 3. 设计图

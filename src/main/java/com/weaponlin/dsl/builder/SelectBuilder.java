@@ -1,8 +1,8 @@
 package com.weaponlin.dsl.builder;
 
 import com.google.common.collect.Lists;
-import com.weaponlin.dsl.operand.ColumnOperand;
-import com.weaponlin.dsl.operand.NameOperand;
+import com.weaponlin.dsl.operand.transform.ColumnOperand;
+import com.weaponlin.dsl.operand.transform.TransformOperand;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
@@ -21,37 +21,37 @@ import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 public class SelectBuilder implements Serializable {
     private static final long serialVersionUID = 5394178704845865940L;
 
-    private List<NameOperand> selectColumns;
+    private List<TransformOperand> columns;
 
     public SelectBuilder() {
-        this.selectColumns = Lists.newArrayList();
+        this.columns = Lists.newArrayList();
     }
 
     public SelectBuilder(String... columns) {
         checkNotNull(columns, "Wrong arguments");
-        selectColumns = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
+        this.columns = Arrays.stream(columns).map(ColumnOperand::column).collect(toList());
     }
 
-    public SelectBuilder(NameOperand... operands) {
+    public SelectBuilder(ColumnOperand... operands) {
         checkNotNull(operands, "Wrong arguments");
-        selectColumns = Lists.newArrayList(operands);
+        columns = Lists.newArrayList(operands);
     }
 
     public SelectBuilder column(String... columns) {
-        List<ColumnOperand> columnOperands = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
-        selectColumns.addAll(columnOperands);
+        List<ColumnOperand> columnOperands = Arrays.stream(columns).map(ColumnOperand::column).collect(toList());
+        this.columns.addAll(columnOperands);
         return this;
     }
 
-    public SelectBuilder column(NameOperand... operands) {
-        selectColumns.addAll(Arrays.asList(checkNotNull(operands, "Operands shouldn't be null")));
+    public SelectBuilder column(ColumnOperand... operands) {
+        columns.addAll(Arrays.asList(checkNotNull(operands, "Operands shouldn't be null")));
         return this;
     }
 
     @Override
     public String toString() {
-        checkState(isNotEmpty(selectColumns), "Wrong usage, no column selected");
-        return selectColumns.stream().map(selectColumn -> selectColumn.toString(true))
+        checkState(isNotEmpty(columns), "Wrong usage, no column selected");
+        return columns.stream().map(selectColumn -> selectColumn.toString(true))
             .filter(StringUtils::isNotBlank).collect(joining(", ", "SELECT ", ""));
     }
 
@@ -70,7 +70,7 @@ public class SelectBuilder implements Serializable {
     }
 
     @Deprecated
-    public static SelectBuilder select(NameOperand... operands) {
+    public static SelectBuilder select(ColumnOperand... operands) {
         return new SelectBuilder(operands);
     }
 }

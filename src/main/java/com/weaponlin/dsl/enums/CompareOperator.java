@@ -25,8 +25,7 @@ public enum CompareOperator {
     IS_NOT_NULL("is not null"),
     IN("in"),
     NOT_IN("not in"),
-    // TODO between...and...
-    BETWEEN_AND("between_and");
+    ;
 
     @Getter
     private String comparator;

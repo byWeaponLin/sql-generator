@@ -1,8 +1,8 @@
 package com.weaponlin.dsl.builder;
 
 import com.google.common.collect.Lists;
-import com.weaponlin.dsl.operand.BitwiseOperand;
-import com.weaponlin.dsl.operator.BooleanOperator;
+import com.weaponlin.dsl.enums.BooleanOperator;
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;
@@ -16,7 +16,7 @@ public class WhereBuilder implements Serializable {
 
     private final SelectBuilder selectBuilder;
     private final FromBuilder fromBuilder;
-    private final List<BitwiseOperand> operands = Lists.newArrayList();
+    private final List<ExpressionOperand> operands = Lists.newArrayList();
     private volatile BooleanOperator booleanIdentifier;
 
     WhereBuilder(SelectBuilder selectBuilder, FromBuilder fromBuilder) {
@@ -24,14 +24,14 @@ public class WhereBuilder implements Serializable {
         this.fromBuilder = checkNotNull(fromBuilder, "from builder shouldn't be null");
     }
 
-    public WhereBuilder and(BitwiseOperand operand) {
+    public WhereBuilder and(ExpressionOperand operand) {
         checkIdentificationStatus(BooleanOperator.AND);
         checkNotNull(operand, "BitwiseOperand shouldn't be null");
         operands.add(operand);
         return this;
     }
 
-    public WhereBuilder or(BitwiseOperand operand) {
+    public WhereBuilder or(ExpressionOperand operand) {
         checkIdentificationStatus(BooleanOperator.OR);
         checkNotNull(operand, "BitwiseOperand shouldn't be null");
         operands.add(operand);

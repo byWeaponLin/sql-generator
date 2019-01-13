@@ -1,7 +1,6 @@
 package com.weaponlin.dsl;
 
 import com.weaponlin.dsl.builder.SelectBuilder;
-import com.weaponlin.dsl.operand.NameOperand;
 
 /**
  * TODO
@@ -16,9 +15,6 @@ public class DSL {
         return new SelectBuilder(columns);
     }
 
-    public static SelectBuilder select(NameOperand... operands) {
-        return new SelectBuilder(operands);
-    }
 
     public static void update() {
 
