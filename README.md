@@ -10,7 +10,7 @@
 
 显然,这样的代码无法满足我们对性的需求(可扩展性,可维护性...),于是我们决定重新设计一版`SQL-Generator`.首先我们希望设计的sql是一种类似`fluent api`的形式,比如: 
     
-    select.column(col1).col(col2).from(tbl).where().and(avg(col1)>10).and(col2<100).forMin(10)
+    select.column(col1).column(col2).from(tbl).where().and(avg(col1)>10).and(col2<100).forMin(10)
 这样的设计很直观很优雅,很符合一条sql语句的形式.
 
 ## 2 抽象
@@ -99,3 +99,9 @@ public CalculateOperator arithmetic(TransformOperand left, String operator, Tran
 ## 4 总结(一顿操作猛如虎,一看战绩零杆五)
 * 抽象思维才是王道
 * 函数式编程在这里就是秀操作
+
+## 5 TODO
+- [ ] 去除定制化，构建一个完整的、可适用于平常开发中生成SQL字符串的SQLGenerator
+- [ ] 将生成sql字符串缓存起来，避免每次去生成SQL模板
+- [ ] 定义数据库表分片策略
+- [ ] 定义GenericOperand，最原生的表达式，就是一个字符串，主要是为了防止在未支持一些语法之前而提供的

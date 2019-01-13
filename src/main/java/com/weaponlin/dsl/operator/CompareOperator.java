@@ -2,20 +2,19 @@ package com.weaponlin.dsl.operator;
 
 import com.weaponlin.dsl.operand.BitwiseOperand;
 import com.weaponlin.dsl.operand.TransformOperand;
-import com.weaponlin.enums.Comparator;
 import lombok.AllArgsConstructor;
 
 import java.util.function.BiFunction;
 
 @AllArgsConstructor
 public enum CompareOperator implements Operator<BitwiseOperand> {
-    GT(Comparator.GT, TransformOperand::gt),
-    GE(Comparator.GE, TransformOperand::ge),
-    EQ(Comparator.EQ, TransformOperand::equal),
-    LT(Comparator.LT, TransformOperand::lt),
-    LE(Comparator.LE, TransformOperand::le);
+    GT(com.weaponlin.dsl.enums.CompareOperator.GT, TransformOperand::gt),
+    GE(com.weaponlin.dsl.enums.CompareOperator.GE, TransformOperand::ge),
+    EQ(com.weaponlin.dsl.enums.CompareOperator.EQ, TransformOperand::equal),
+    LT(com.weaponlin.dsl.enums.CompareOperator.LT, TransformOperand::lt),
+    LE(com.weaponlin.dsl.enums.CompareOperator.LE, TransformOperand::le);
 
-    private Comparator operator;
+    private com.weaponlin.dsl.enums.CompareOperator operator;
 
     private BiFunction<TransformOperand, TransformOperand, BitwiseOperand> function;
 
@@ -33,9 +32,9 @@ public enum CompareOperator implements Operator<BitwiseOperand> {
      * Warning,this method only for the dynamic threshold,because the comparator attribute has two meanings.
      */
     public CalculateOperator getCalculateOperator() {
-        if (operator == Comparator.GT) {
+        if (operator == com.weaponlin.dsl.enums.CompareOperator.GT) {
             return CalculateOperator.valueOf("ADD");
-        } else if (operator == Comparator.LT) {
+        } else if (operator == com.weaponlin.dsl.enums.CompareOperator.LT) {
             return CalculateOperator.valueOf("MINUS");
         }
 

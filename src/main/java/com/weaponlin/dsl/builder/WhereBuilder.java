@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.weaponlin.dsl.builder.ForBuilder.ForUnit.*;
 import static java.util.stream.Collectors.joining;
 
 public class WhereBuilder implements Serializable {
@@ -55,11 +54,7 @@ public class WhereBuilder implements Serializable {
         return operands.stream().map(bit -> bit.toString(false)).collect(joining(booleanIdentifier.getOperator(), "WHERE ", ""));
     }
 
-    public ForBuilder forMinutes(int val) {
-        return new ForBuilder(val, MIN, selectBuilder, fromBuilder, this);
-    }
-
-    public ForBuilder forEvents(int val) {
-        return new ForBuilder(val, EVENTS, selectBuilder, fromBuilder, this);
+    public String build() {
+        return selectBuilder  + " " + fromBuilder + " " + this.toString();
     }
 }
