@@ -4,7 +4,7 @@ import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * TODO 系统内置函数
+ * TODO Inner Function will be done next time.
  */
 public class InnerFunctionOperand extends FunctionOperand {
     private static final long serialVersionUID = 3141827431185669384L;

@@ -3,6 +3,9 @@ package com.weaponlin.dsl.operand.expression;
 import com.weaponlin.dsl.operand.transform.TransformOperand;
 import com.weaponlin.dsl.enums.Aggregate;
 
+/**
+ * TODO REFACTOR
+ */
 public class FunctionExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = -7608252715501917810L;
 

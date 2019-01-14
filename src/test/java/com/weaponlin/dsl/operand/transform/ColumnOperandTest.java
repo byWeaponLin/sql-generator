@@ -1,35 +1,31 @@
 package com.weaponlin.dsl.operand.transform;
 
-import org.junit.Rule;
+import com.weaponlin.dsl.BaseTest;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
-public class ColumnOperandTest {
-
-    @Rule
-    public ExpectedException thrown = ExpectedException.none();
+public class ColumnOperandTest extends BaseTest {
 
     @Test
     public void column_success() {
         ColumnOperand column = ColumnOperand.name("id");
         assertEquals("id", column.toString());
         column.as("_id");
-        assertEquals("id as _id", column.toString());
+        assertEquals("id AS _id", column.toString());
     }
 
     @Test
     public void throw_exception_if_column_name_is_null() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("name name can not be empty");
+        thrown.expectMessage("column name can not be empty");
         ColumnOperand.name((String) null);
     }
 
     @Test
     public void throw_exception_if_column_name_is_empty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("name name can not be empty");
+        thrown.expectMessage("column name can not be empty");
         ColumnOperand.name("");
     }
 }

@@ -20,7 +20,6 @@ public abstract class TransformOperand extends Operand {
 
     protected TransformOperand(String name) {
         super(name);
-        parameters = Lists.newArrayList();
     }
 
     public ExpressionOperand ge(TransformOperand operand) {

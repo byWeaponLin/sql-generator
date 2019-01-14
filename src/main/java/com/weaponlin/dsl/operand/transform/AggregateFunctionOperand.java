@@ -5,6 +5,8 @@ import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.expression.FunctionExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.weaponlin.dsl.operand.transform.ColumnOperand.*;
 
 /**
@@ -27,42 +29,52 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand max(String column) {
-        return new AggregateFunctionOperand(name(column), Aggregate.MAX);
+        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        return max(name(column));
     }
 
     public static AggregateFunctionOperand max(TransformOperand operand) {
+        checkNotNull(operand, "operand can not be null");
         return new AggregateFunctionOperand(operand, Aggregate.MAX);
     }
 
     public static AggregateFunctionOperand min(String column) {
-        return new AggregateFunctionOperand(name(column), Aggregate.MIN);
+        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        return min(name(column));
     }
 
     public static AggregateFunctionOperand min(TransformOperand operand) {
+        checkNotNull(operand, "operand can not be null");
         return new AggregateFunctionOperand(operand, Aggregate.MIN);
     }
 
     public static AggregateFunctionOperand avg(String column) {
-        return new AggregateFunctionOperand(name(column), Aggregate.AVG);
+        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        return avg(name(column));
     }
 
     public static AggregateFunctionOperand avg(TransformOperand operand) {
+        checkNotNull(operand, "operand can not be null");
         return new AggregateFunctionOperand(operand, Aggregate.AVG);
     }
 
     public static AggregateFunctionOperand sum(String column) {
-        return new AggregateFunctionOperand(name(column), Aggregate.SUM);
+        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        return sum(name(column));
     }
 
     public static AggregateFunctionOperand sum(TransformOperand operand) {
+        checkNotNull(operand, "operand can not be null");
         return new AggregateFunctionOperand(operand, Aggregate.SUM);
     }
 
     public static AggregateFunctionOperand count(String column) {
-        return new AggregateFunctionOperand(name(column), Aggregate.COUNT);
+        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        return count(name(column));
     }
 
     public static AggregateFunctionOperand count(TransformOperand operand) {
+        checkNotNull(operand, "operand can not be null");
         return new AggregateFunctionOperand(operand, Aggregate.COUNT);
     }
 
