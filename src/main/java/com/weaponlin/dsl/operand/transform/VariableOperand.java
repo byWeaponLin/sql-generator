@@ -1,21 +1,26 @@
 package com.weaponlin.dsl.operand.transform;
 
 
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import lombok.NonNull;
+import org.apache.commons.collections.CollectionUtils;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collections;
+import java.util.Objects;
+import java.util.Optional;
+
+import static java.util.stream.Collectors.joining;
 
 /**
  * TODO
  */
 public class VariableOperand extends TransformOperand {
     private static final long serialVersionUID = -3585238394996936166L;
-    private List<Object> values;
 
     private VariableOperand(Object... values) {
         super("");
-        this.values = Arrays.asList(values);
+        super.parameters = Arrays.asList(values);
     }
 
     public static VariableOperand values(@NonNull Object... values) {
@@ -34,6 +39,22 @@ public class VariableOperand extends TransformOperand {
      */
     @Override
     public String toString(boolean hasAlias) {
-        return null;
+        return Optional.ofNullable(parameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .map(list ->
+                        Collections.nCopies(list.size(), "?")
+                                .stream()
+                                .collect(joining(", "))
+                ).orElse("");
+    }
+
+    @Override
+    public String toString() {
+        return toString(false);
+    }
+
+    @Override
+    public ExpressionOperand toExpression() {
+        throw new UnsupportedOperationException("can not convert VariableOperand to ExpressionOperand");
     }
 }

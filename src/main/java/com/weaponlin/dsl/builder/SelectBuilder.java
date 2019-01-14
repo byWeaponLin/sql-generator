@@ -29,7 +29,7 @@ public class SelectBuilder implements Serializable {
 
     public SelectBuilder(String... columns) {
         checkNotNull(columns, "Wrong arguments");
-        this.columns = Arrays.stream(columns).map(ColumnOperand::column).collect(toList());
+        this.columns = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
     }
 
     public SelectBuilder(ColumnOperand... operands) {
@@ -38,7 +38,7 @@ public class SelectBuilder implements Serializable {
     }
 
     public SelectBuilder column(String... columns) {
-        List<ColumnOperand> columnOperands = Arrays.stream(columns).map(ColumnOperand::column).collect(toList());
+        List<ColumnOperand> columnOperands = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
         this.columns.addAll(columnOperands);
         return this;
     }
@@ -50,7 +50,7 @@ public class SelectBuilder implements Serializable {
 
     @Override
     public String toString() {
-        checkState(isNotEmpty(columns), "Wrong usage, no column selected");
+        checkState(isNotEmpty(columns), "Wrong usage, no name selected");
         return columns.stream().map(selectColumn -> selectColumn.toString(true))
             .filter(StringUtils::isNotBlank).collect(joining(", ", "SELECT ", ""));
     }

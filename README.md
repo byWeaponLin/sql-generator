@@ -10,7 +10,7 @@
 
 显然,这样的代码无法满足我们对性的需求(可扩展性,可维护性...),于是我们决定重新设计一版`SQL-Generator`.首先我们希望设计的sql是一种类似`fluent api`的形式,比如: 
     
-    select.column(col1).column(col2).from(tbl).where().and(avg(col1)>10).and(col2<100).forMin(10)
+    select.operand(col1).operand(col2).from(tbl).where().and(avg(col1)>10).and(col2<100).forMin(10)
 这样的设计很直观很优雅,很符合一条sql语句的形式.
 
 ## 2 抽象
@@ -18,7 +18,7 @@
 
 **select part**: 
     
-    1.column, 2.column as alias_name, 3.aggregate_function(column) as alias_name
+    1.operand, 2.operand as alias_name, 3.aggregate_function(operand) as alias_name
 **from part**: 
     
     table_name

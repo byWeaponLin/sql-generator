@@ -1,7 +1,11 @@
 package com.weaponlin.dsl.operand.transform;
 
 import com.weaponlin.dsl.enums.Aggregate;
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
+import com.weaponlin.dsl.operand.expression.FunctionExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
+
+import static com.weaponlin.dsl.operand.transform.ColumnOperand.*;
 
 /**
  * TODO 聚合函数
@@ -14,54 +18,53 @@ public class AggregateFunctionOperand extends FunctionOperand {
 
     private Aggregate aggregate;
 
-    private ColumnOperand column;
+    private TransformOperand operand;
 
-    AggregateFunctionOperand(ColumnOperand column, Aggregate aggregate) {
-        super(column.getName());
-        this.column = column;
+    AggregateFunctionOperand(TransformOperand operand, Aggregate aggregate) {
+        super(operand.getName());
+        this.operand = operand;
         this.aggregate = aggregate;
     }
 
     public static AggregateFunctionOperand max(String column) {
-        return max(ColumnOperand.column(column));
+        return new AggregateFunctionOperand(name(column), Aggregate.MAX);
     }
 
-    public static AggregateFunctionOperand max(ColumnOperand column) {
-        return new AggregateFunctionOperand(column, Aggregate.MAX);
+    public static AggregateFunctionOperand max(TransformOperand operand) {
+        return new AggregateFunctionOperand(operand, Aggregate.MAX);
     }
 
     public static AggregateFunctionOperand min(String column) {
-        return min(ColumnOperand.column(column));
+        return new AggregateFunctionOperand(name(column), Aggregate.MIN);
     }
 
-    public static AggregateFunctionOperand min(ColumnOperand column) {
-        return new AggregateFunctionOperand(column, Aggregate.MIN);
+    public static AggregateFunctionOperand min(TransformOperand operand) {
+        return new AggregateFunctionOperand(operand, Aggregate.MIN);
     }
 
     public static AggregateFunctionOperand avg(String column) {
-        return avg(ColumnOperand.column(column));
+        return new AggregateFunctionOperand(name(column), Aggregate.AVG);
     }
 
-    public static AggregateFunctionOperand avg(ColumnOperand column) {
-        return new AggregateFunctionOperand(column, Aggregate.AVG);
+    public static AggregateFunctionOperand avg(TransformOperand operand) {
+        return new AggregateFunctionOperand(operand, Aggregate.AVG);
     }
 
     public static AggregateFunctionOperand sum(String column) {
-        return sum(ColumnOperand.column(column));
+        return new AggregateFunctionOperand(name(column), Aggregate.SUM);
     }
 
-    public static AggregateFunctionOperand sum(ColumnOperand column) {
-        return new AggregateFunctionOperand(column, Aggregate.SUM);
+    public static AggregateFunctionOperand sum(TransformOperand operand) {
+        return new AggregateFunctionOperand(operand, Aggregate.SUM);
     }
 
     public static AggregateFunctionOperand count(String column) {
-        return count(ColumnOperand.column(column));
+        return new AggregateFunctionOperand(name(column), Aggregate.COUNT);
     }
 
-    public static AggregateFunctionOperand count(ColumnOperand column) {
-        return new AggregateFunctionOperand(column, Aggregate.COUNT);
+    public static AggregateFunctionOperand count(TransformOperand operand) {
+        return new AggregateFunctionOperand(operand, Aggregate.COUNT);
     }
-
 
     public AggregateFunctionOperand as(String alias) {
         this.alias = alias;
@@ -69,7 +72,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     private String fullFunction() {
-        return aggregate.getFunctionName() + "(" + column.toString(false) + ")";
+        return aggregate.getFunctionName() + "(" + operand.toString(false) + ")";
     }
 
     @Override
@@ -80,5 +83,10 @@ public class AggregateFunctionOperand extends FunctionOperand {
     @Override
     public String toString() {
         return toString(true);
+    }
+
+    @Override
+    public ExpressionOperand toExpression() {
+        return new FunctionExpressionOperand(aggregate, this);
     }
 }

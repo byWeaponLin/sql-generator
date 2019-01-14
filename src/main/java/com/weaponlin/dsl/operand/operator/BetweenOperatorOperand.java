@@ -2,6 +2,7 @@ package com.weaponlin.dsl.operand.operator;
 
 import com.weaponlin.dsl.operand.transform.VariableOperand;
 
+@Deprecated
 public class BetweenOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = -5917770564059569617L;
 

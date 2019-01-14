@@ -2,6 +2,7 @@ package com.weaponlin.dsl.operand.operator;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+@Deprecated
 public class LikeOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = -8483762890141108278L;
 

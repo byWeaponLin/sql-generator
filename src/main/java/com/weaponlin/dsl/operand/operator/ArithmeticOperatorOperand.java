@@ -1,29 +1,29 @@
 package com.weaponlin.dsl.operand.operator;
 
 import com.weaponlin.dsl.enums.ArithmeticOperator;
-import com.weaponlin.dsl.operand.transform.ColumnOperand;
-import com.weaponlin.dsl.operand.transform.VariableOperand;
+import com.weaponlin.dsl.operand.transform.TransformOperand;
 
 /**
- * TODO 算术运算
+ * TODO 算术运算表达式
  */
+@Deprecated
 public class ArithmeticOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = 2321512695610163641L;
 
-    private ColumnOperand column;
+    private TransformOperand left;
     private ArithmeticOperator operator;
-    private VariableOperand variable;
+    private TransformOperand right;
 
-    public ArithmeticOperatorOperand(ColumnOperand column, ArithmeticOperator operator, VariableOperand variable) {
+    public ArithmeticOperatorOperand(TransformOperand left, ArithmeticOperator operator, TransformOperand right) {
         super(operator.getOperator());
-        this.column = column;
+        this.left = left;
         this.operator = operator;
-        this.variable = variable;
+        this.right = right;
     }
 
     @Override
     public String toString(boolean hasAlias) {
-        return column.toString(false) + operator.getOperator() + " ?";
+        return left.toString(false) + operator.getOperator() + right.toString(false);
     }
 
     @Override

@@ -1,17 +1,26 @@
 package com.weaponlin.dsl.operand.transform;
 
+import com.google.common.collect.Lists;
 import com.weaponlin.dsl.operand.Operand;
 import com.weaponlin.dsl.operand.expression.*;
 import com.weaponlin.dsl.enums.Aggregate;
 import com.weaponlin.dsl.enums.ArithmeticOperator;
+
+import java.util.List;
 
 import static com.weaponlin.dsl.enums.CompareOperator.*;
 
 public abstract class TransformOperand extends Operand {
     private static final long serialVersionUID = 8510012843009307113L;
 
+    /**
+     * TODO IMPORTANT
+     */
+    protected List<Object> parameters;
+
     protected TransformOperand(String name) {
         super(name);
+        parameters = Lists.newArrayList();
     }
 
     public ExpressionOperand ge(TransformOperand operand) {
@@ -38,96 +47,134 @@ public abstract class TransformOperand extends Operand {
         return new CompareExpressionOperand(this, LT, operand);
     }
 
-    public ExpressionOperand like(TransformOperand operand) {
+    /**
+     * {column} like '{parameter}'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand like(VariableOperand operand) {
         return new CompareExpressionOperand(this, LIKE, operand);
     }
 
-    public ExpressionOperand notLike(TransformOperand operand) {
+    /**
+     * {column} like '%{parameter}'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand _like(VariableOperand operand) {
+        return new CompareExpressionOperand(this, LIKE, operand);
+    }
+
+    /**
+     * {column} like '{parameter}%'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand like_(VariableOperand operand) {
+        return new CompareExpressionOperand(this, LIKE, operand);
+    }
+
+    /**
+     * {column} like '%{parameter}%'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand _like_(VariableOperand operand) {
+        return new CompareExpressionOperand(this, LIKE, operand);
+    }
+
+    /**
+     * {column} not like '{parameter}'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand notLike(VariableOperand operand) {
         return new CompareExpressionOperand(this, NOT_LIKE, operand);
     }
 
-    public ExpressionOperand isNull(TransformOperand operand) {
-        return new CompareExpressionOperand(this, IS_NULL, operand);
+    /**
+     * {column} not like '%{parameter}'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand _notLike(VariableOperand operand) {
+        return new CompareExpressionOperand(this, NOT_LIKE, operand);
     }
 
-    public ExpressionOperand isNotNull(TransformOperand operand) {
-        return new CompareExpressionOperand(this, IS_NOT_NULL, operand);
+    /**
+     * {column} not like '{parameter}%'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand notLike_(VariableOperand operand) {
+        return new CompareExpressionOperand(this, NOT_LIKE, operand);
     }
 
-    public ExpressionOperand in(TransformOperand values) {
-        return new CompareExpressionOperand(this, IN, values);
+    /**
+     * {column} not like '%{parameter}%'
+     * @param operand
+     * @return
+     */
+    public ExpressionOperand _notLike_(VariableOperand operand) {
+        return new CompareExpressionOperand(this, NOT_LIKE, operand);
     }
 
-    public ExpressionOperand notIn(TransformOperand values) {
-        return new CompareExpressionOperand(this, NOT_IN, values);
+    public ExpressionOperand isNull() {
+        return new CompareExpressionOperand(this, IS_NULL, null);
+    }
+
+    public ExpressionOperand isNotNull() {
+        return new CompareExpressionOperand(this, IS_NOT_NULL, null);
+    }
+
+    public ExpressionOperand in(TransformOperand operand) {
+        return new CompareExpressionOperand(this, IN, operand);
+    }
+
+    public ExpressionOperand notIn(TransformOperand operand) {
+        return new CompareExpressionOperand(this, NOT_IN, operand);
     }
 
     public ExpressionOperand betweenAnd(TransformOperand value1, TransformOperand value2) {
         return new BetweenExpressionOperand(this, value1, value2);
     }
 
-    public ExpressionOperand add(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.ADD, operand);
+    public ArithmeticOperand add(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.ADD, operand);
     }
 
-    public ExpressionOperand minus(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.MINUS, operand);
+    public ArithmeticOperand minus(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.MINUS, operand);
     }
 
-    public ExpressionOperand multiply(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.MULTIPLY, operand);
+    public ArithmeticOperand multiply(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.MULTIPLY, operand);
     }
 
-    public ExpressionOperand divide(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.DIVIDE, operand);
+    public ArithmeticOperand divide(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.DIVIDE, operand);
     }
 
-    public ExpressionOperand and(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.AND, operand);
+    public ArithmeticOperand and(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.AND, operand);
     }
 
-    public ExpressionOperand or(TransformOperand operand) {
-        return new ArithmeticExpressionOperand(this, ArithmeticOperator.OR, operand);
-    }
-
-    /**
-     * TODO change method name
-     * @param operand
-     * @return
-     */
-    @Deprecated
-    public ExpressionOperand column(TransformOperand operand) {
-        return new ColumnExpressionOperand(operand);
-    }
-
-    public ExpressionOperand expression() {
-        return new ChildExpressionOperand();
+    public ArithmeticOperand or(TransformOperand operand) {
+        return new ArithmeticOperand(this, ArithmeticOperator.OR, operand);
     }
 
     /**
-     * TODO consider how to operand aggregate function
+     * TODO insert child expression
      *
      * @return
      */
-    public ExpressionOperand max() {
-        return new FunctionExpressionOperand(Aggregate.MAX, this);
+    public ExpressionOperand nestedExpression() {
+        return new ChildExpressionOperand();
     }
 
-    public ExpressionOperand min() {
-        return new FunctionExpressionOperand(Aggregate.MIN, this);
+    public abstract ExpressionOperand toExpression();
+
+    public List<Object> getParameters() {
+        return parameters;
     }
-
-    public ExpressionOperand count() {
-        return new FunctionExpressionOperand(Aggregate.COUNT, this);
-    }
-
-    public ExpressionOperand sum() {
-        return new FunctionExpressionOperand(Aggregate.SUM, this);
-    }
-
-    public ExpressionOperand avg() {
-        return new FunctionExpressionOperand(Aggregate.AVG, this);
-    }
-
-
 }

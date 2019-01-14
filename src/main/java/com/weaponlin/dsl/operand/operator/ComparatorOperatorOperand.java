@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * TODO 比较符
  */
+@Deprecated
 public class ComparatorOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = 638583525725789675L;
 

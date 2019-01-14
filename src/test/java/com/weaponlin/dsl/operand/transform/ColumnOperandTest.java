@@ -13,7 +13,7 @@ public class ColumnOperandTest {
 
     @Test
     public void column_success() {
-        ColumnOperand column = ColumnOperand.column("id");
+        ColumnOperand column = ColumnOperand.name("id");
         assertEquals("id", column.toString());
         column.as("_id");
         assertEquals("id as _id", column.toString());
@@ -22,14 +22,14 @@ public class ColumnOperandTest {
     @Test
     public void throw_exception_if_column_name_is_null() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("column name can not be empty");
-        ColumnOperand.column((String) null);
+        thrown.expectMessage("name name can not be empty");
+        ColumnOperand.name((String) null);
     }
 
     @Test
     public void throw_exception_if_column_name_is_empty() {
         thrown.expect(IllegalArgumentException.class);
-        thrown.expectMessage("column name can not be empty");
-        ColumnOperand.column("");
+        thrown.expectMessage("name name can not be empty");
+        ColumnOperand.name("");
     }
 }

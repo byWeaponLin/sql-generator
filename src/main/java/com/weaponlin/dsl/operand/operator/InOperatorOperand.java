@@ -7,6 +7,7 @@ import java.util.Collections;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.util.stream.Collectors.joining;
 
+@Deprecated
 public class InOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = 7632160740408852158L;
 

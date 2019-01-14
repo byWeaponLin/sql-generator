@@ -1,5 +1,6 @@
 package com.weaponlin.dsl.operand.operator;
 
+@Deprecated
 public class NullOperatorOperand extends OperatorOperand {
     private static final long serialVersionUID = -305410045738774571L;
 

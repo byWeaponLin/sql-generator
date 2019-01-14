@@ -6,7 +6,6 @@ import com.weaponlin.dsl.enums.ArithmeticOperator;
 /**
  *
  */
-@Deprecated
 public class ArithmeticExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = 5023260839181426657L;
 
@@ -25,5 +24,10 @@ public class ArithmeticExpressionOperand extends ExpressionOperand {
     public String toString(boolean hasAlias) {
         // TODO
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return toString(true);
     }
 }

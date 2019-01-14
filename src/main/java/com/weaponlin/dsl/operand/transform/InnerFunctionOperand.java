@@ -1,5 +1,6 @@
 package com.weaponlin.dsl.operand.transform;
 
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -12,6 +13,11 @@ public class InnerFunctionOperand extends FunctionOperand {
 
     InnerFunctionOperand(String name) {
         super(name);
+    }
+
+    @Override
+    public ExpressionOperand toExpression() {
+        throw new UnsupportedOperationException("inner function not support now");
     }
 
     /**

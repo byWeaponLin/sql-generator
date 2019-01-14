@@ -26,7 +26,7 @@ public class AggregateFunctionOperandTest {
 
     @Test
     public void test_avg_success() {
-        AggregateFunctionOperand avg = AggregateFunctionOperand.avg(column("score"));
+        AggregateFunctionOperand avg = AggregateFunctionOperand.avg(name("score"));
         assertEquals("AVG(score)", avg.toString());
         avg.as("avg_score");
         assertEquals("AVG(score) AS avg_score", avg.toString());
