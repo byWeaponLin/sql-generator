@@ -21,7 +21,12 @@ public class CompareExpressionOperand extends ExpressionOperand {
 
     @Override
     public String toString(boolean hasAlias) {
-        // TODO
-        return null;
+        // TODO add alias
+        return left.toString(false) + operator.getComparator() + right.toString(false);
+    }
+
+    @Override
+    public String toString() {
+        return toString(true);
     }
 }

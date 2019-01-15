@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eba9a92-0044-42d1-8408-50f6943ef1e3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/PlaceholderOperand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ValueOperand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ArithmeticOperandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/PlaceholderOperandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/TransformOperandTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ValueOperandTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/LikeOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/OperandExpressionOperand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/enums/LikeOptionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RE-DESIGN.md" beforeDir="false" afterPath="$PROJECT_DIR$/RE-DESIGN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ArithmeticExpressionOperand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ColumnExpressionOperand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/LikeExpressionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/LikeExpressionOperand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ColumnOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ColumnOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/InnerFunctionOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/InnerFunctionOperand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/VariableOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/VariableOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ColumnOperandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ColumnOperandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/VariableOperandTest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,35 +30,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArithmeticOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java">
+      <file leaf-file-name="OperandExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/OperandExpressionOperand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+            <state relative-caret-position="306">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#885#886#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#172#173#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColumnOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ColumnOperand.java">
+      <file leaf-file-name="SelectBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="203">
+              <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+              <folding>
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#909#910#0" expanded="true" />
+                <element signature="e#2256#2257#0" expanded="true" />
+                <element signature="e#2305#2306#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DSL.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+              <folding>
+                <element signature="e#154#155#0" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#306#307#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DSLTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/DSLTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LikeExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/LikeExpressionOperand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#999#1000#0" expanded="true" />
-                <element signature="e#1060#1061#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1168#1169#0" expanded="true" />
-                <element signature="e#1212#1213#0" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,128 +102,65 @@
       <file leaf-file-name="AggregateFunctionOperand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="939">
-              <caret line="101" column="28" lean-forward="true" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+            <state relative-caret-position="372">
+              <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3067#3068#0" expanded="true" />
+                <element signature="e#3155#3156#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlaceholderOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/PlaceholderOperand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#522#523#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#918#919#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
-                <element signature="e#1515#1516#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InnerFunctionOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/InnerFunctionOperand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VariableOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/VariableOperand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Collections.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/Collections.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="4420" column="30" lean-forward="true" selection-start-line="4420" selection-start-column="30" selection-end-line="4420" selection-end-column="30" />
-              <folding>
-                <element signature="e#175306#175307#0" expanded="true" />
-                <element signature="e#175349#175350#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArithmeticOperandTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ArithmeticOperandTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1178">
-              <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransformOperand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#733#734#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1329#1330#0" expanded="true" />
-                <element signature="e#1390#1391#0" expanded="true" />
-                <element signature="e#1460#1461#0" expanded="true" />
-                <element signature="e#1610#1611#0" expanded="true" />
-                <element signature="e#1682#1683#0" expanded="true" />
-                <element signature="e#3337#3338#0" expanded="true" />
-                <element signature="e#3409#3410#0" expanded="true" />
-                <element signature="e#3453#3454#0" expanded="true" />
-                <element signature="e#3529#3530#0" expanded="true" />
-                <element signature="e#3590#3591#0" expanded="true" />
-                <element signature="e#3660#3661#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
-                <element signature="e#5028#5029#0" expanded="true" />
-                <element signature="e#5126#5127#0" expanded="true" />
-                <element signature="e#5159#5160#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransformOperandTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/TransformOperandTest.java">
+      <file leaf-file-name="ExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompareExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+              <folding>
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChildExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BetweenExpressionOperand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#793#794#0" expanded="true" />
+                <element signature="e#832#833#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,9 +174,9 @@
         <option value="AnnotationType" />
         <option value="Arquillian JUnit Test Class" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Enum" />
         <option value="JUnit4 Test Class" />
       </list>
     </option>
@@ -230,21 +201,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/FunctionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/InnerFunctionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/Operand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/ColumnOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/AggregateFunctionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/ChildExpression.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/BooleanOperator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/ChildExpressionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/expression/ChildExpressionOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/TransformOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/transform/VariableOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/design/expression/ExpressionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/WhereBuilder.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/builder/SelectBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/Aggregate.java" />
@@ -252,9 +211,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/ArithmeticOperator.java" />
         <option value="$PROJECT_DIR$/DESIGN.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ArithmeticExpressionOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/CompareOperator.java" />
-        <option value="$PROJECT_DIR$/RE-DESIGN.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/ArithmeticOperatorOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/GenericBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/package-info.java" />
@@ -270,17 +227,31 @@
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/InnerFunctionOperand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ValueOperandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ColumnOperandTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperandTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ValueOperand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/PlaceHolderOperandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/BaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ColumnOperand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/ArithmeticOperandTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/TransformOperandTest.java" />
+        <option value="$PROJECT_DIR$/RE-DESIGN.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ArithmeticExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ColumnExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/OperandExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/LikeOption.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/enums/LikeOptionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/LikeExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/DSLTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java" />
       </list>
     </option>
   </component>
@@ -373,15 +344,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dsl" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sql-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dsl" type="462c0819:PsiDirectoryNode" />
               <item name="meta" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -441,44 +403,25 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dsl" type="462c0819:PsiDirectoryNode" />
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sql-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dsl" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sql-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dsl" type="462c0819:PsiDirectoryNode" />
               <item name="transform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sql-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="junit" type="462c0819:PsiDirectoryNode" />
-              <item name="rules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -513,6 +456,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.weaponlin.dsl.enums" />
       <recent name="com.weaponlin.dsl.operand.transform" />
       <recent name="com.weaponlin.dsl" />
       <recent name="com.weaponlin.dsl.builder" />
@@ -543,35 +487,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ArithmeticOperandTest.test_arithmetic_with_value_success">
+  <component name="RunManager" selected="JUnit.LikeOptionTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration name="ArithmeticOperandTest.test_and_with_function_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sql-generator" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.weaponlin.dsl.operand.transform.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.operand.transform" />
-      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.operand.transform.ArithmeticOperandTest" />
-      <option name="METHOD_NAME" value="test_and_with_function_success" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="ArithmeticOperandTest.test_arithmetic_with_placeholder_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sql-generator" />
@@ -619,19 +540,42 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ArithmeticOperandTest.test_multiple_arithemetic_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LikeOptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sql-generator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.weaponlin.dsl.operand.transform.*" />
+          <option name="PATTERN" value="com.weaponlin.dsl.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.operand.transform" />
-      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.operand.transform.ArithmeticOperandTest" />
-      <option name="METHOD_NAME" value="test_multiple_arithemetic_success" />
+      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.enums" />
+      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.enums.LikeOptionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="LikeOptionTest.test_left_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sql-generator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.weaponlin.dsl.enums.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.enums" />
+      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.enums.LikeOptionTest" />
+      <option name="METHOD_NAME" value="test_left_success" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -642,19 +586,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ArithmeticOperandTest.throw_exception_if_alias_is_empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LikeOptionTest.test_none_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sql-generator" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.weaponlin.dsl.operand.transform.*" />
+          <option name="PATTERN" value="com.weaponlin.dsl.enums.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.operand.transform" />
-      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.operand.transform.ArithmeticOperandTest" />
-      <option name="METHOD_NAME" value="throw_exception_if_alias_is_empty" />
+      <option name="PACKAGE_NAME" value="com.weaponlin.dsl.enums" />
+      <option name="MAIN_CLASS_NAME" value="com.weaponlin.dsl.enums.LikeOptionTest" />
+      <option name="METHOD_NAME" value="test_none_success" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -704,19 +648,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.ArithmeticOperandTest.test_multiple_arithemetic_success" />
-      <item itemvalue="JUnit.ArithmeticOperandTest.test_and_with_function_success" />
-      <item itemvalue="JUnit.ArithmeticOperandTest.throw_exception_if_alias_is_empty" />
       <item itemvalue="JUnit.ArithmeticOperandTest.test_arithmetic_with_placeholder_success" />
       <item itemvalue="JUnit.ArithmeticOperandTest.test_arithmetic_with_value_success" />
+      <item itemvalue="JUnit.LikeOptionTest.test_none_success" />
+      <item itemvalue="JUnit.LikeOptionTest.test_left_success" />
+      <item itemvalue="JUnit.LikeOptionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LikeOptionTest" />
+        <item itemvalue="JUnit.LikeOptionTest.test_left_success" />
+        <item itemvalue="JUnit.LikeOptionTest.test_none_success" />
         <item itemvalue="JUnit.ArithmeticOperandTest.test_arithmetic_with_value_success" />
         <item itemvalue="JUnit.ArithmeticOperandTest.test_arithmetic_with_placeholder_success" />
-        <item itemvalue="JUnit.ArithmeticOperandTest.throw_exception_if_alias_is_empty" />
-        <item itemvalue="JUnit.ArithmeticOperandTest.test_and_with_function_success" />
-        <item itemvalue="JUnit.ArithmeticOperandTest.test_multiple_arithemetic_success" />
       </list>
     </recent_temporary>
   </component>
@@ -738,29 +682,11 @@
       <workItem from="1512223090511" duration="5121000" />
       <workItem from="1512232089404" duration="6521000" />
       <workItem from="1546833540950" duration="21764000" />
-      <workItem from="1546916151269" duration="72077000" />
+      <workItem from="1546916151269" duration="78041000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ArithmeticOperandTest_test_add_success - 2019.01.15 at 00h 45m 20s.xml">
-      <configuration name="ArithmeticOperandTest.test_add_success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticOperandTest_test_add_success - 2019.01.15 at 00h 48m 12s.xml">
-      <configuration name="ArithmeticOperandTest.test_add_success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticOperandTest_test_add_success - 2019.01.15 at 00h 57m 37s.xml">
-      <configuration name="ArithmeticOperandTest.test_add_success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticOperandTest_test_add_success - 2019.01.15 at 00h 59m 13s.xml">
-      <configuration name="ArithmeticOperandTest.test_add_success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticOperandTest_test_multiple_arithemetic_success - 2019.01.15 at 01h 01m 27s.xml">
-      <configuration name="ArithmeticOperandTest.test_multiple_arithemetic_success" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ArithmeticOperandTest_test_and_with_function_success - 2019.01.15 at 01h 04m 34s.xml">
-      <configuration name="ArithmeticOperandTest.test_and_with_function_success" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ArithmeticOperandTest_test_and_with_function_success - 2019.01.15 at 01h 04m 56s.xml">
       <configuration name="ArithmeticOperandTest.test_and_with_function_success" configurationId="JUnit" />
     </history-entry>
@@ -773,9 +699,27 @@
     <history-entry file="ArithmeticOperandTest_test_arithmetic_with_value_success - 2019.01.15 at 01h 14m 18s.xml">
       <configuration name="ArithmeticOperandTest.test_arithmetic_with_value_success" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LikeOptionTest_test_none_success - 2019.01.15 at 20h 55m 53s.xml">
+      <configuration name="LikeOptionTest.test_none_success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LikeOptionTest_test_none_success - 2019.01.15 at 20h 56m 09s.xml">
+      <configuration name="LikeOptionTest.test_none_success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LikeOptionTest_test_none_success - 2019.01.15 at 20h 57m 01s.xml">
+      <configuration name="LikeOptionTest.test_none_success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LikeOptionTest_test_left_success - 2019.01.15 at 20h 58m 19s.xml">
+      <configuration name="LikeOptionTest.test_left_success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LikeOptionTest_test_left_success - 2019.01.15 at 20h 59m 24s.xml">
+      <configuration name="LikeOptionTest.test_left_success" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LikeOptionTest - 2019.01.15 at 21h 00m 54s.xml">
+      <configuration name="LikeOptionTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105483000" />
+    <option name="totallyTimeSpent" value="111447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,300 +793,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/annotation/Column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3554" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/com.weaponlin.dsl">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.weaponlin.dsl</OriginalElement>
-          <nodes>
-            <node x="1638.0000000000002" y="168.0">com.weaponlin.dsl.operand.operator.InOperatorOperand</node>
-            <node x="0.0" y="168.0">com.weaponlin.dsl.operand.expression.BetweenExpressionOperand</node>
-            <node x="2533.0" y="168.0">com.weaponlin.dsl.operand.operator.NullOperatorOperand</node>
-            <node x="1194.0000000000002" y="168.0">com.weaponlin.dsl.operand.expression.LikeExpressionOperand</node>
-            <node x="851.0" y="321.0">com.weaponlin.dsl.DSL</node>
-            <node x="472.0000000000002" y="168.0">com.weaponlin.dsl.operand.expression.ArithmeticExpressionOperand</node>
-            <node x="3281.0" y="168.0">com.weaponlin.dsl.operand.transform.ArithmeticOperand</node>
-            <node x="757.0000000000002" y="79.0">com.weaponlin.dsl.operand.expression.ExpressionOperand</node>
-            <node x="2290.0" y="168.0">com.weaponlin.dsl.operand.operator.ComparatorOperatorOperand</node>
-            <node x="2792.5" y="247.0">com.weaponlin.dsl.operand.transform.AggregateFunctionOperand</node>
-            <node x="3196.2450828157353" y="79.0">com.weaponlin.dsl.operand.transform.TransformOperand</node>
-            <node x="0.0" y="321.0">com.weaponlin.dsl.operand.transform.AggregateFunctionOperandTest</node>
-            <node x="3468.0" y="168.0">com.weaponlin.dsl.operand.transform.ColumnOperand</node>
-            <node x="501.0" y="321.0">com.weaponlin.dsl.builder</node>
-            <node x="1825.0000000000002" y="168.0">com.weaponlin.dsl.operand.operator.BetweenOperatorOperand</node>
-            <node x="2047.0000000000002" y="168.0">com.weaponlin.dsl.operand.operator.ArithmeticOperatorOperand</node>
-            <node x="3108.0" y="168.0">com.weaponlin.dsl.operand.transform.VariableOperand</node>
-            <node x="683.0" y="321.0">com.weaponlin.dsl.enums</node>
-            <node x="289.0" y="321.0">com.weaponlin.dsl.operand.transform.ColumnOperandTest</node>
-            <node x="972.0000000000002" y="168.0">com.weaponlin.dsl.operand.expression.ChildExpressionOperand</node>
-            <node x="1409.0000000000002" y="168.0">com.weaponlin.dsl.operand.expression.ColumnExpressionOperand</node>
-            <node x="236.00000000000023" y="168.0">com.weaponlin.dsl.operand.expression.CompareExpressionOperand</node>
-            <node x="729.0000000000002" y="168.0">com.weaponlin.dsl.operand.expression.FunctionExpressionOperand</node>
-            <node x="2734.0" y="168.0">com.weaponlin.dsl.operand.operator.LikeOperatorOperand</node>
-            <node x="2231.5" y="0.0">com.weaponlin.dsl.operand.Operand</node>
-            <node x="2203.5" y="79.0">com.weaponlin.dsl.operand.operator.OperatorOperand</node>
-            <node x="3028.5" y="247.0">com.weaponlin.dsl.operand.transform.InnerFunctionOperand</node>
-            <node x="2935.0" y="168.0">com.weaponlin.dsl.operand.transform.FunctionOperand</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.weaponlin.dsl.operand.expression.ExpressionOperand" target="com.weaponlin.dsl.operand.Operand">
-              <point x="0.0" y="-14.5" />
-              <point x="840.5000000000002" y="54.0" />
-              <point x="2247.666666666667" y="54.0" />
-              <point x="-32.33333333333326" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.BetweenOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="1926.0000000000002" y="138.0" />
-              <point x="2241.75" y="138.0" />
-              <point x="-38.25" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.InnerFunctionOperand" target="com.weaponlin.dsl.operand.transform.FunctionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="3122.5" y="222.0" />
-              <point x="3049.75" y="222.0" />
-              <point x="38.25" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.ChildExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="1073.0000000000002" y="148.0" />
-              <point x="864.3571428571429" y="148.0" />
-              <point x="23.857142857142662" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.TransformOperand" target="com.weaponlin.dsl.operand.Operand">
-              <point x="0.0" y="-14.5" />
-              <point x="3276.2450828157353" y="54.0" />
-              <point x="2312.333333333334" y="54.0" />
-              <point x="32.333333333333485" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.ColumnExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="1513.5000000000002" y="128.0" />
-              <point x="912.0714285714287" y="128.0" />
-              <point x="71.57142857142844" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.ArithmeticOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="2158.5" y="148.0" />
-              <point x="2267.25" y="148.0" />
-              <point x="-12.75" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.AggregateFunctionOperand" target="com.weaponlin.dsl.operand.transform.FunctionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="2900.5" y="222.0" />
-              <point x="2973.25" y="222.0" />
-              <point x="-38.25" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.BetweenExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="108.0" y="128.0" />
-              <point x="768.9285714285716" y="128.0" />
-              <point x="-71.57142857142867" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.ComparatorOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="2401.5" y="148.0" />
-              <point x="2292.75" y="148.0" />
-              <point x="12.75" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.FunctionOperand" target="com.weaponlin.dsl.operand.transform.TransformOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="3011.5" y="138.0" />
-              <point x="3216.2450828157353" y="138.0" />
-              <point x="-60.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.NullOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="2623.5" y="138.0" />
-              <point x="2318.25" y="138.0" />
-              <point x="38.25" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.ArithmeticExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="590.5000000000002" y="148.0" />
-              <point x="816.6428571428576" y="148.0" />
-              <point x="-23.857142857142662" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.CompareExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="344.0000000000002" y="138.0" />
-              <point x="792.7857142857144" y="138.0" />
-              <point x="-47.71428571428578" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.InOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="1721.5000000000002" y="128.0" />
-              <point x="2216.25" y="128.0" />
-              <point x="-63.75" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.LikeOperatorOperand" target="com.weaponlin.dsl.operand.operator.OperatorOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="2824.5" y="128.0" />
-              <point x="2343.75" y="128.0" />
-              <point x="63.75" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.ArithmeticOperand" target="com.weaponlin.dsl.operand.transform.TransformOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="3364.5" y="148.0" />
-              <point x="3296.2450828157353" y="148.0" />
-              <point x="20.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.FunctionExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.ColumnOperand" target="com.weaponlin.dsl.operand.transform.TransformOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="3537.5" y="138.0" />
-              <point x="3336.2450828157353" y="138.0" />
-              <point x="60.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.operator.OperatorOperand" target="com.weaponlin.dsl.operand.Operand">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.transform.VariableOperand" target="com.weaponlin.dsl.operand.transform.TransformOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="3184.5" y="148.0" />
-              <point x="3256.2450828157353" y="148.0" />
-              <point x="-20.0" y="14.5" />
-            </edge>
-            <edge source="com.weaponlin.dsl.operand.expression.LikeExpressionOperand" target="com.weaponlin.dsl.operand.expression.ExpressionOperand">
-              <point x="0.0" y="-14.5" />
-              <point x="1291.5000000000002" y="138.0" />
-              <point x="888.214285714286" y="138.0" />
-              <point x="47.71428571428578" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.131661301458918" x="294.0775886659694" y="30.077588665969387" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ColumnExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/Operand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/GenericBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/ArithmeticOperatorOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/package-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RE-DESIGN.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="470">
-            <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/CompareOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/InOperatorOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/OperatorOperand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1170,17 +820,6 @@
           <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/BetweenOperatorOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <element signature="e#1111#1112#0" expanded="true" />
-            <element signature="e#1149#1150#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1283,33 +922,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ArithmeticExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#854#855#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/ArithmeticOperator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="579" column="19" selection-start-line="579" selection-start-column="19" selection-end-line="579" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -1384,22 +993,6 @@
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/PlaceholderOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1425,18 +1018,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#885#886#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ColumnOperand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -1455,10 +1036,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/TransformOperandTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="101" column="28" lean-forward="true" selection-start-line="101" selection-start-column="28" selection-end-line="101" selection-end-column="28" />
+        <state relative-caret-position="133">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/lang/NullPointerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9551">
+          <caret line="577" column="36" selection-start-line="577" selection-start-column="36" selection-end-line="577" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RE-DESIGN.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="509">
+            <caret line="37" column="79" lean-forward="true" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ColumnExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/FunctionExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ArithmeticExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="e#817#818#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/operator/BetweenOperatorOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/CompareOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/PlaceholderOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#1515#1516#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/enums/LikeOptionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/enums/LikeOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1467,46 +1154,144 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/TransformOperand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
+        <state relative-caret-position="308">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#602#603#0" expanded="true" />
             <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#733#734#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1127#1128#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1329#1330#0" expanded="true" />
-            <element signature="e#1390#1391#0" expanded="true" />
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1610#1611#0" expanded="true" />
-            <element signature="e#1682#1683#0" expanded="true" />
-            <element signature="e#3337#3338#0" expanded="true" />
-            <element signature="e#3409#3410#0" expanded="true" />
-            <element signature="e#3453#3454#0" expanded="true" />
-            <element signature="e#3529#3530#0" expanded="true" />
-            <element signature="e#3590#3591#0" expanded="true" />
-            <element signature="e#3660#3661#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
-            <element signature="e#5028#5029#0" expanded="true" />
-            <element signature="e#5126#5127#0" expanded="true" />
-            <element signature="e#5159#5160#0" expanded="true" />
+            <element signature="e#3294#3295#0" expanded="true" />
+            <element signature="e#3366#3367#0" expanded="true" />
+            <element signature="e#4934#4935#0" expanded="true" />
+            <element signature="e#4985#4986#0" expanded="true" />
+            <element signature="e#5083#5084#0" expanded="true" />
+            <element signature="e#5116#5117#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/operand/transform/TransformOperandTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/ArithmeticOperand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+        <state relative-caret-position="386">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/transform/AggregateFunctionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="85" column="33" lean-forward="true" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3067#3068#0" expanded="true" />
+            <element signature="e#3155#3156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/OperandExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/BetweenExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/ChildExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="48" column="4" lean-forward="true" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/CompareExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#832#833#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/operand/expression/LikeExpressionOperand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/builder/SelectBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+          <folding>
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#2256#2257#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/weaponlin/dsl/DSLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/weaponlin/dsl/DSL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
           </folding>
         </state>
       </provider>

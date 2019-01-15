@@ -25,34 +25,34 @@ select().columns()
     .build();
 // ==> select * from students; 
 
-select().operand("id").operand("name").operand("score")
+select().column("id").column("name").column("score")
     .from("students")
     .build();
 // ==> select id, name, socre from students;
 
-select().operand("id","name","score")
+select().column("id","name","score")
     .from("students")
-    .where().and(operand("class_id").eq(11))
-    .orderBy(operand("score"))
+    .where().and(column("class_id").eq(11))
+    .orderBy(column("score"))
     .build();
 // ==> select id, name, score from students where class_id = 11 order by score;
 
 select().count()
     .from("students")
-    .where().and(operand("class_id").eq(11))
+    .where().and(column("class_id").eq(11))
     .build();
 // ==> select count(1) from students where class_id = 11;
 
-select().max(operand("score"))
+select().max(column("score"))
     .from("students")
-    .where().and(operand("class_id").eq(11))
+    .where().and(column("class_id").eq(11))
     .build();
 // ==> select max('score') from students where class_id =  11;
 
 select().columns()
     .from("students")
     .groupBy(columns("class_id"))
-    .orderBy(operand("class_id"))
+    .orderBy(column("class_id"))
     .desc()
     .build();
 // ==> select * from students group by class_id order by class_id desc;
@@ -66,15 +66,15 @@ select().columns()
 
 select().columns()
     .from("students")
-    .where().and(operand("name").like('%zhang')).and(operand('class_id').in(1,2,3,4)).and(operand("score").between(60, 100))
+    .where().and(column("name").like('%zhang')).and(column('class_id').in(1,2,3,4)).and(column("score").between(60, 100))
     .limit(100)
     .build();
 // ==> select * from students where name like '%zhang' and class_id in (1,2,3,4) and score between 60 and 100 limit 100;
 
 select().columns()
     .from("students")
-    .where().and(operand("class_id").eq(1))
-    .orderBy(operand("score"))
+    .where().and(column("class_id").eq(1))
+    .orderBy(column("score"))
     .desc()
     .limit(10, 10)
     .build();
@@ -82,7 +82,7 @@ select().columns()
 
 select().columns()
     .from("students")
-    .where().and(operand("class_id").eq(1)).and(expression().or(operand("age").gt(20)).or(operand("score").le(90)))
+    .where().and(column("class_id").eq(1)).and(expression().or(column("age").gt(20)).or(column("score").le(90)))
     .build();
 
 // ==> select * from students where class_id = 1 and (age > 20 or score <= 90)
@@ -92,7 +92,7 @@ select().columns()
 
 ```java
 insert().into("students")
-    .operand("id").operand("name").operand("age")
+    .column("id").column("name").column("age")
     .value(1111).value("zhangsan").value(22)
     .build();
 // ==> insert into students (id, name, age) values (1111, 'zhangsan', 22);
@@ -114,13 +114,13 @@ insert().into("students")
 
 ```java
 update().table("students")
-    .set(operand("name").eq("zhangsan2")).set(operand("score").eq(99.5))
+    .set(column("name").eq("zhangsan2")).set(column("score").eq(99.5))
     .build();
 // ==> update students set name = 'zhangsan2', score = 99.5;
 
 update().table("students")
-    .set(operand("name").eq("zhangsan2")).set(operand("score").eq(99.5))
-    .where().and(operand("name").eq("zhangsan"))
+    .set(column("name").eq("zhangsan2")).set(column("score").eq(99.5))
+    .where().and(column("name").eq("zhangsan"))
     .build();
 // ==> update students set name = 'zhangsan2', score = 99.5 where name = 'zhangsan';
 ```
@@ -129,7 +129,7 @@ update().table("students")
 
 ```java
 delete().from("studens")
-    .where().and(operand("id").eq(1111))
+    .where().and(column("id").eq(1111))
     .build();
 // ==> delete from students where id = 1111;
 

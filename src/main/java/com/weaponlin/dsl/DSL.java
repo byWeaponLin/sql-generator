@@ -7,10 +7,13 @@ import com.weaponlin.dsl.builder.SelectBuilder;
  */
 public class DSL {
 
+    public static SelectBuilder select;
+
     public static SelectBuilder select() {
         return new SelectBuilder();
     }
 
+    @Deprecated
     public static SelectBuilder select(String... columns) {
         return new SelectBuilder(columns);
     }

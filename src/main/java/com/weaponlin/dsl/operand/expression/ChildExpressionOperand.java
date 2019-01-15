@@ -45,4 +45,9 @@ public class ChildExpressionOperand extends ExpressionOperand {
         // TODO
         return null;
     }
+
+    @Override
+    public String toString() {
+        return toString(true);
+    }
 }

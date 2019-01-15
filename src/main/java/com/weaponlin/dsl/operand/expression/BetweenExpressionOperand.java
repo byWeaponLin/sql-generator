@@ -19,6 +19,12 @@ public class BetweenExpressionOperand extends ExpressionOperand {
 
     @Override
     public String toString(boolean hasAlias) {
-        return null;
+        // TODO add alias
+        return left.toString(false) + " between " + value1.toString(false) + " and " + value2.toString(false);
+    }
+
+    @Override
+    public String toString() {
+        return toString(true);
     }
 }

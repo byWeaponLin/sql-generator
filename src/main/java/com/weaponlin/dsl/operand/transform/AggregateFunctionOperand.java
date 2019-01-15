@@ -2,7 +2,7 @@ package com.weaponlin.dsl.operand.transform;
 
 import com.weaponlin.dsl.enums.Aggregate;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
-import com.weaponlin.dsl.operand.expression.FunctionExpressionOperand;
+import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
 
 import static com.google.common.base.Preconditions.checkArgument;
@@ -99,6 +99,6 @@ public class AggregateFunctionOperand extends FunctionOperand {
 
     @Override
     public ExpressionOperand toExpression() {
-        return new FunctionExpressionOperand(aggregate, this);
+        return new OperandExpressionOperand(this);
     }
 }

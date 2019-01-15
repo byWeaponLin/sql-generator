@@ -27,11 +27,13 @@ public class SelectBuilder implements Serializable {
         this.columns = Lists.newArrayList();
     }
 
+    @Deprecated
     public SelectBuilder(String... columns) {
         checkNotNull(columns, "Wrong arguments");
         this.columns = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
     }
 
+    @Deprecated
     public SelectBuilder(ColumnOperand... operands) {
         checkNotNull(operands, "Wrong arguments");
         columns = Lists.newArrayList(operands);
