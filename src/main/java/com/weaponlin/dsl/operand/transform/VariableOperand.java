@@ -4,6 +4,7 @@ package com.weaponlin.dsl.operand.transform;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * TODO
@@ -19,5 +20,9 @@ public abstract class VariableOperand extends TransformOperand {
     @Override
     public ExpressionOperand toExpression() {
         throw new UnsupportedOperationException("can not convert VariableOperand to ExpressionOperand");
+    }
+
+    protected List<Object> getRealParameters() {
+        return super.parameters;
     }
 }

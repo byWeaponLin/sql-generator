@@ -1,14 +1,16 @@
-package com.weaponlin.dsl.operand.expression;
+package com.weaponlin.dsl.operand.control;
+
+import com.weaponlin.dsl.operand.Operand;
 
 /**
  * TODO interesting
  */
-public class IfThenElseExpressionOperand extends ExpressionOperand {
+public class IfThenElseExpressionOperand extends Operand {
     private static final long serialVersionUID = -8254982278446889442L;
 
     private boolean condition;
 
-    private ExpressionOperand operand;
+    private Operand operand;
 
     IfThenElseExpressionOperand(boolean condition) {
         super("");
@@ -20,14 +22,14 @@ public class IfThenElseExpressionOperand extends ExpressionOperand {
         return new IfThenElseExpressionOperand(condition);
     }
 
-    public IfThenElseExpressionOperand then(ExpressionOperand operand) {
+    public IfThenElseExpressionOperand then(Operand operand) {
         if (condition) {
             this.operand = operand;
         }
         return this;
     }
 
-    public IfThenElseExpressionOperand _else(ExpressionOperand operand) {
+    public IfThenElseExpressionOperand _else(Operand operand) {
         if (!condition) {
             this.operand = operand;
         }

@@ -3,6 +3,7 @@ package com.weaponlin.dsl.operand.transform;
 import com.google.common.collect.Lists;
 import com.weaponlin.dsl.enums.ArithmeticOperator;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
+import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -43,8 +44,7 @@ public class ArithmeticOperand extends TransformOperand {
 
     @Override
     public ExpressionOperand toExpression() {
-        // TODO
-        return null;
+        return new OperandExpressionOperand(this);
     }
 
     @Override

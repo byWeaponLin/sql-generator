@@ -6,8 +6,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum BooleanOperator {
 
-    AND("AND"),
-    OR("OR");
+    AND(" AND "),
+    OR(" OR ");
 
     @Getter
     private String operator;

@@ -6,7 +6,8 @@ package com.weaponlin.dsl.builder;
 public interface Builder {
 
     /**
-     * TODO generate sql string
+     * TODO 1. generate sql string
+     * TODO 2. generate SQL(include sql-string, parameters, rowMapper and other info)
      * @return
      */
     String build();

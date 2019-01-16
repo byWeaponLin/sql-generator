@@ -6,10 +6,10 @@ import java.util.Optional;
 
 @AllArgsConstructor
 public enum LikeOption {
-    NONE("%s"),
-    LEFT("%%%s"),
-    RIGHT("%s%%"),
-    ALL("%%%s%%"),
+    NONE("'%s'"),
+    LEFT("'%%%s'"),
+    RIGHT("'%s%%'"),
+    ALL("'%%%s%%'"),
     ;
 
     private String formatter;

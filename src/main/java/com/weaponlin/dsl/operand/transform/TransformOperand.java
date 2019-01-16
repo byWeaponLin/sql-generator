@@ -53,7 +53,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand like(PlaceholderOperand operand) {
+    public ExpressionOperand like(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.NONE);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -63,7 +63,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _like(PlaceholderOperand operand) {
+    public ExpressionOperand _like(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.LEFT);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -73,7 +73,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand like_(PlaceholderOperand operand) {
+    public ExpressionOperand like_(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.RIGHT);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -83,7 +83,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _like_(PlaceholderOperand operand) {
+    public ExpressionOperand _like_(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.ALL);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -93,7 +93,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand notLike(PlaceholderOperand operand) {
+    public ExpressionOperand notLike(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.NONE);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -103,7 +103,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _notLike(PlaceholderOperand operand) {
+    public ExpressionOperand _notLike(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.LEFT);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -113,7 +113,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand notLike_(PlaceholderOperand operand) {
+    public ExpressionOperand notLike_(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.RIGHT);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -123,7 +123,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _notLike_(PlaceholderOperand operand) {
+    public ExpressionOperand _notLike_(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.ALL);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -137,11 +137,11 @@ public abstract class TransformOperand extends Operand {
     }
 
     public ExpressionOperand in(TransformOperand operand) {
-        return new CompareExpressionOperand(this, IN, operand);
+        return new InExpressionOperand(this, IN, operand);
     }
 
     public ExpressionOperand notIn(TransformOperand operand) {
-        return new CompareExpressionOperand(this, NOT_IN, operand);
+        return new InExpressionOperand(this, NOT_IN, operand);
     }
 
     public ExpressionOperand betweenAnd(TransformOperand value1, TransformOperand value2) {
@@ -191,12 +191,12 @@ public abstract class TransformOperand extends Operand {
      * only for like operation
      * @param operand
      */
-    private void decorateParameter(PlaceholderOperand operand, CompareOperator operator, LikeOption likeOption) {
+    private void decorateParameter(VariableOperand operand, CompareOperator operator, LikeOption likeOption) {
         checkArgument(operator == CompareOperator.LIKE || operator == CompareOperator.NOT_LIKE,
                 "decorateParameter only support LIKE and NOT LIKE");
-        checkNotNull(operand, "PlaceholderOperand can not be null");
-        List<Object> parameters = operand.getParameters();
-        checkNotNull(parameters, "PlaceholderOperand's parameters can not be null");
+        checkNotNull(operand, "VariableOperand can not be null");
+        List<Object> parameters = operand.getRealParameters();
+        checkNotNull(parameters, "VariableOperand's parameters can not be null");
         parameters.set(0, likeOption.format(parameters.get(0)));
     }
 }

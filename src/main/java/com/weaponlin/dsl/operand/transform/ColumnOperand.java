@@ -2,6 +2,7 @@ package com.weaponlin.dsl.operand.transform;
 
 import com.google.common.collect.Lists;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
+import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
@@ -41,7 +42,7 @@ public class ColumnOperand extends TransformOperand {
 
     @Override
     public ExpressionOperand toExpression() {
-        return null;
+        return new OperandExpressionOperand(this);
     }
 
     @Override

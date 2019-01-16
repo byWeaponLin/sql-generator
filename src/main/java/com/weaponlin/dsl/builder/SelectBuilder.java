@@ -1,6 +1,8 @@
 package com.weaponlin.dsl.builder;
 
 import com.google.common.collect.Lists;
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
+import com.weaponlin.dsl.operand.table.TableOperand;
 import com.weaponlin.dsl.operand.transform.ColumnOperand;
 import com.weaponlin.dsl.operand.transform.TransformOperand;
 import org.apache.commons.lang3.StringUtils;
@@ -15,64 +17,60 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 
-/**
- * TODO add aggregate function
- */
-public class SelectBuilder implements Serializable {
+public class SelectBuilder implements Serializable, Builder {
     private static final long serialVersionUID = 5394178704845865940L;
 
-    private List<TransformOperand> columns;
+    private List<ExpressionOperand> columns;
+
+    /**
+     * TODO save select filed name(column name, alias, full name and so on)
+     */
+    private List<String> fields;
+
+    /**
+     * TODO save parameters
+     */
+    private List<Object> parameters;
 
     public SelectBuilder() {
         this.columns = Lists.newArrayList();
     }
 
-    @Deprecated
-    public SelectBuilder(String... columns) {
-        checkNotNull(columns, "Wrong arguments");
-        this.columns = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
-    }
-
-    @Deprecated
-    public SelectBuilder(ColumnOperand... operands) {
-        checkNotNull(operands, "Wrong arguments");
-        columns = Lists.newArrayList(operands);
-    }
-
     public SelectBuilder column(String... columns) {
-        List<ColumnOperand> columnOperands = Arrays.stream(columns).map(ColumnOperand::name).collect(toList());
+        List<ExpressionOperand> columnOperands = Arrays.stream(columns)
+                .map(ColumnOperand::name)
+                .map(ColumnOperand::toExpression)
+                .collect(toList());
         this.columns.addAll(columnOperands);
         return this;
     }
 
-    public SelectBuilder column(ColumnOperand... operands) {
-        columns.addAll(Arrays.asList(checkNotNull(operands, "Operands shouldn't be null")));
+    public SelectBuilder column(ExpressionOperand... operands) {
+        checkNotNull(operands, "Operands shouldn't be null");
+        columns.addAll(Arrays.asList(operands));
+        return this;
+    }
+
+    public SelectBuilder column(TransformOperand... operands) {
+        checkNotNull(operands, "Operands shouldn't be null");
+        columns.addAll(Arrays.stream(operands).map(TransformOperand::toExpression).collect(toList()));
         return this;
     }
 
     @Override
     public String toString() {
+        // TODO if column is empty then select *
         checkState(isNotEmpty(columns), "Wrong usage, no name selected");
         return columns.stream().map(selectColumn -> selectColumn.toString(true))
-            .filter(StringUtils::isNotBlank).collect(joining(", ", "SELECT ", ""));
+                .filter(StringUtils::isNotBlank).collect(joining(", ", "SELECT ", ""));
     }
 
-    public FromBuilder from(String tableName) {
-        return new FromBuilder(tableName, this);
+    public FromBuilder from(TableOperand operand) {
+        return new FromBuilder(operand, this);
     }
 
-    @Deprecated
-    public static SelectBuilder select() {
-        return new SelectBuilder();
-    }
-
-    @Deprecated
-    public static SelectBuilder select(String... columns) {
-        return new SelectBuilder(columns);
-    }
-
-    @Deprecated
-    public static SelectBuilder select(ColumnOperand... operands) {
-        return new SelectBuilder(operands);
+    @Override
+    public String build() {
+        return this.toString();
     }
 }

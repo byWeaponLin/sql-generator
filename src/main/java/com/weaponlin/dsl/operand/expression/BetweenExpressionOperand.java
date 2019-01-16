@@ -20,7 +20,7 @@ public class BetweenExpressionOperand extends ExpressionOperand {
     @Override
     public String toString(boolean hasAlias) {
         // TODO add alias
-        return left.toString(false) + " between " + value1.toString(false) + " and " + value2.toString(false);
+        return left.toString(false) + " BETWEEN " + value1.toString(false) + " AND " + value2.toString(false);
     }
 
     @Override
