@@ -8,6 +8,10 @@ import java.util.List;
 public abstract class ExpressionOperand extends Operand {
     private static final long serialVersionUID = -6216349853355952178L;
 
+    /**
+     * TODO add alias
+     */
+
     @Getter
     protected List<Object> parameters;
 
@@ -24,4 +28,8 @@ public abstract class ExpressionOperand extends Operand {
      * TODO
      */
 //    abstract String as();
+
+    /**
+     * TODO add if...else
+     */
 }
