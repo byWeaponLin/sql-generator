@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.weaponlin.dsl.enums.ArithmeticOperator;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
-import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Collections;
@@ -13,17 +12,12 @@ import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-/**
- * TODO
- */
 public class ArithmeticOperand extends TransformOperand {
     private static final long serialVersionUID = -3912432990109932328L;
 
     private TransformOperand left;
     private ArithmeticOperator operator;
     private TransformOperand right;
-
-    private String alias;
 
 
     ArithmeticOperand(TransformOperand left, ArithmeticOperator operator, TransformOperand right) {
@@ -36,6 +30,7 @@ public class ArithmeticOperand extends TransformOperand {
         super.parameters = objects;
     }
 
+    @Override
     public ArithmeticOperand as(String alias) {
         checkArgument(StringUtils.isNotBlank(alias), "alias can not be empty.");
         this.alias = alias;
@@ -49,7 +44,10 @@ public class ArithmeticOperand extends TransformOperand {
 
     @Override
     public String toString(boolean hasAlias) {
-        return left + operator.getOperator() + right + (hasAlias && StringUtils.isNotBlank(alias) ? " AS " + alias : "");
+        return left
+                + operator.getOperator()
+                + right
+                + getDecoratedAlias(hasAlias);
     }
 
     @Override

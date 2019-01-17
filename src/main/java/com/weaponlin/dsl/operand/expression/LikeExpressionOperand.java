@@ -27,8 +27,10 @@ public class LikeExpressionOperand extends ExpressionOperand {
 
     @Override
     public String toString(boolean hasAlias) {
-        // TODO add alias
-        return left.toString(false) + operator.getComparator() + right.toString(false);
+        return left.toString(false)
+                + operator.getComparator()
+                + right.toString(false)
+                + getDecoratedAlias(hasAlias);
     }
 
     @Override

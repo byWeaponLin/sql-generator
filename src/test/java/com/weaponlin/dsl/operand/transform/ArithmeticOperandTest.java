@@ -69,7 +69,7 @@ public class ArithmeticOperandTest extends BaseTest {
 
     @Test
     public void test_and_with_function_success() {
-        ArithmeticOperand operand = AggregateFunctionOperand.max("score")
+        TransformOperand operand = AggregateFunctionOperand.max("score")
                 .add(PlaceholderOperand.value(10))
                 .minus(ColumnOperand.name("age"))
                 .as("what");

@@ -3,6 +3,9 @@ package com.weaponlin.dsl.operand.transform;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import org.apache.commons.lang3.StringUtils;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+
 /**
  * TODO Inner Function will be done next time.
  */
@@ -36,14 +39,16 @@ public class InnerFunctionOperand extends FunctionOperand {
         return new InnerFunctionOperand("rand()");
     }
 
+    @Override
     public InnerFunctionOperand as(String alias) {
+        checkArgument(isNotBlank(alias), "alias can not be empty.");
         this.alias = alias;
         return this;
     }
 
     @Override
     public String toString(boolean hasAlias) {
-        return hasAlias && StringUtils.isNotBlank(alias) ? name + " as " + alias : name;
+        return name + getDecoratedAlias(hasAlias);
     }
 
     @Override

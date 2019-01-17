@@ -15,11 +15,12 @@ public class OperandExpressionOperand extends ExpressionOperand {
         super(operand.getName());
         this.operand = operand;
         super.parameters = Optional.ofNullable(operand.getParameters()).orElse(Lists.newArrayList());
+        this.alias = operand.getAlias();
     }
 
     @Override
     public String toString(boolean hasAlias) {
-        return operand.toString();
+        return operand.toString(false) + getDecoratedAlias(hasAlias);
     }
 
     @Override

@@ -14,7 +14,6 @@ public class ValueOperand extends VariableOperand {
     private static final long serialVersionUID = 7109780381078443859L;
 
     ValueOperand(Object... values) {
-
         super(values);
     }
 

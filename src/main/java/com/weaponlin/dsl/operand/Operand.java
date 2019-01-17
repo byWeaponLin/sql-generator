@@ -17,5 +17,13 @@ public abstract class Operand implements Serializable {
         this.name = name;
     }
 
+    /**
+     * TODO getParameters
+     */
+
     public abstract String toString(boolean hasAlias);
+
+    public abstract Operand as(String alias);
+
+    protected abstract String getDecoratedAlias(boolean hasAlias);
 }

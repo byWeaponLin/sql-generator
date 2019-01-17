@@ -1,16 +1,18 @@
 package com.weaponlin.dsl.operand.transform;
 
+import com.weaponlin.dsl.enums.ArithmeticOperator;
 import com.weaponlin.dsl.enums.CompareOperator;
 import com.weaponlin.dsl.enums.LikeOption;
 import com.weaponlin.dsl.operand.Operand;
 import com.weaponlin.dsl.operand.expression.*;
-import com.weaponlin.dsl.enums.ArithmeticOperator;
+import lombok.Getter;
 
 import java.util.List;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.weaponlin.dsl.enums.CompareOperator.*;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 public abstract class TransformOperand extends Operand {
     private static final long serialVersionUID = 8510012843009307113L;
@@ -19,6 +21,9 @@ public abstract class TransformOperand extends Operand {
      * TODO IMPORTANT
      */
     protected List<Object> parameters;
+
+    @Getter
+    protected String alias;
 
     protected TransformOperand(String name) {
         super(name);
@@ -185,6 +190,18 @@ public abstract class TransformOperand extends Operand {
 
     public List<Object> getParameters() {
         return parameters;
+    }
+
+    @Override
+    public TransformOperand as(String alias) {
+        checkArgument(isNotBlank(alias), "alias can not be empty.");
+        this.alias = alias;
+        return this;
+    }
+
+    @Override
+    protected String getDecoratedAlias(boolean hasAlias) {
+        return  (hasAlias && isNotBlank(alias) ? " AS " + alias : "");
     }
 
     /**

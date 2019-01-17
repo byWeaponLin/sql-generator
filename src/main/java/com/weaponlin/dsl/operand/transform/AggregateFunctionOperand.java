@@ -3,11 +3,11 @@ package com.weaponlin.dsl.operand.transform;
 import com.weaponlin.dsl.enums.Aggregate;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
-import org.apache.commons.lang3.StringUtils;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.weaponlin.dsl.operand.transform.ColumnOperand.*;
+import static com.weaponlin.dsl.operand.transform.ColumnOperand.name;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * TODO 聚合函数
@@ -15,8 +15,6 @@ import static com.weaponlin.dsl.operand.transform.ColumnOperand.*;
  */
 public class AggregateFunctionOperand extends FunctionOperand {
     private static final long serialVersionUID = 161277410730688617L;
-
-    private String alias;
 
     private Aggregate aggregate;
 
@@ -29,7 +27,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand max(String column) {
-        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        checkArgument(isNotBlank(column), "column can not be blank");
         return max(name(column));
     }
 
@@ -39,7 +37,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand min(String column) {
-        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        checkArgument(isNotBlank(column), "column can not be blank");
         return min(name(column));
     }
 
@@ -49,7 +47,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand avg(String column) {
-        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        checkArgument(isNotBlank(column), "column can not be blank");
         return avg(name(column));
     }
 
@@ -59,7 +57,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand sum(String column) {
-        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        checkArgument(isNotBlank(column), "column can not be blank");
         return sum(name(column));
     }
 
@@ -69,7 +67,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
     }
 
     public static AggregateFunctionOperand count(String column) {
-        checkArgument(StringUtils.isNotBlank(column), "column can not be blank");
+        checkArgument(isNotBlank(column), "column can not be blank");
         return count(name(column));
     }
 
@@ -78,7 +76,9 @@ public class AggregateFunctionOperand extends FunctionOperand {
         return new AggregateFunctionOperand(operand, Aggregate.COUNT);
     }
 
+    @Override
     public AggregateFunctionOperand as(String alias) {
+        checkArgument(isNotBlank(alias), "alias can not be empty.");
         this.alias = alias;
         return this;
     }
@@ -89,7 +89,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
 
     @Override
     public String toString(boolean hasAlias) {
-        return fullFunction() + (hasAlias && StringUtils.isNotBlank(alias) ? " AS " + alias : "");
+        return fullFunction() + getDecoratedAlias(hasAlias);
     }
 
     @Override

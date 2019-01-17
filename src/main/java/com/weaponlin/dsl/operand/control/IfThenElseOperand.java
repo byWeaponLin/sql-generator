@@ -5,31 +5,31 @@ import com.weaponlin.dsl.operand.Operand;
 /**
  * TODO interesting
  */
-public class IfThenElseExpressionOperand extends Operand {
+public class IfThenElseOperand extends Operand {
     private static final long serialVersionUID = -8254982278446889442L;
 
     private boolean condition;
 
     private Operand operand;
 
-    IfThenElseExpressionOperand(boolean condition) {
+    IfThenElseOperand(boolean condition) {
         super("");
         this.condition = condition;
         this.operand = null;
     }
 
-    public static IfThenElseExpressionOperand _if(boolean condition) {
-        return new IfThenElseExpressionOperand(condition);
+    public static IfThenElseOperand _if(boolean condition) {
+        return new IfThenElseOperand(condition);
     }
 
-    public IfThenElseExpressionOperand then(Operand operand) {
+    public IfThenElseOperand then(Operand operand) {
         if (condition) {
             this.operand = operand;
         }
         return this;
     }
 
-    public IfThenElseExpressionOperand _else(Operand operand) {
+    public IfThenElseOperand _else(Operand operand) {
         if (!condition) {
             this.operand = operand;
         }
@@ -40,6 +40,17 @@ public class IfThenElseExpressionOperand extends Operand {
     public String toString(boolean hasAlias) {
         // TODO
         return null;
+    }
+
+    @Override
+    public Operand as(String alias) {
+        // TODO
+        return null;
+    }
+
+    @Override
+    protected String getDecoratedAlias(boolean hasAlias) {
+        return "";
     }
 
     @Override

@@ -25,4 +25,14 @@ public abstract class VariableOperand extends TransformOperand {
     protected List<Object> getRealParameters() {
         return super.parameters;
     }
+
+    @Override
+    public TransformOperand as(String alias) {
+        throw new UnsupportedOperationException("VariableOperand not support this operation");
+    }
+
+    @Override
+    protected String getDecoratedAlias(boolean hasAlias) {
+        throw new UnsupportedOperationException("VariableOperand not support this operation");
+    }
 }

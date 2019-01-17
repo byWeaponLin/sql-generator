@@ -15,13 +15,13 @@ public class AggregateFunctionOperandTest extends BaseTest {
 
     @Test
     public void test_min_success() {
-        AggregateFunctionOperand min = AggregateFunctionOperand.min("score").as("min_score");
+        TransformOperand min = AggregateFunctionOperand.min("score").as("min_score");
         assertEquals("MIN(score) AS min_score", min.toString());
     }
 
     @Test
     public void test_sum_success() {
-        AggregateFunctionOperand sum = AggregateFunctionOperand.sum(ColumnOperand.name("score").as("sre")).as("sum_score");
+        TransformOperand sum = AggregateFunctionOperand.sum(ColumnOperand.name("score").as("sre")).as("sum_score");
         assertEquals("SUM(score) AS sum_score", sum.toString());
     }
 

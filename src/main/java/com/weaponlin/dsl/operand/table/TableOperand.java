@@ -22,6 +22,7 @@ public class TableOperand extends Operand {
         return new TableOperand(tableName);
     }
 
+    @Override
     public TableOperand as(String alias) {
         checkArgument(StringUtils.isNotBlank(alias), "alias can not be empty");
         this.alias = alias;
@@ -29,8 +30,13 @@ public class TableOperand extends Operand {
     }
 
     @Override
+    protected String getDecoratedAlias(boolean hasAlias) {
+        return (hasAlias && StringUtils.isNotBlank(alias) ? " AS " + alias : "");
+    }
+
+    @Override
     public String toString(boolean hasAlias) {
-        return tableName + (hasAlias && StringUtils.isNotBlank(alias) ? " AS " + alias : "");
+        return tableName + getDecoratedAlias(hasAlias);
     }
 
     @Override
