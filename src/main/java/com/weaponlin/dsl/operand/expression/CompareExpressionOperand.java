@@ -2,6 +2,7 @@ package com.weaponlin.dsl.operand.expression;
 
 import com.weaponlin.dsl.operand.transform.TransformOperand;
 import com.weaponlin.dsl.enums.CompareOperator;
+import lombok.Getter;
 
 public class CompareExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = 2554618149615907450L;
@@ -9,6 +10,7 @@ public class CompareExpressionOperand extends ExpressionOperand {
     private TransformOperand left;
     private TransformOperand right;
 
+    @Getter
     private CompareOperator operator;
 
 

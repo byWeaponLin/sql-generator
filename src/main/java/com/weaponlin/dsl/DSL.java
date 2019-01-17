@@ -1,6 +1,9 @@
 package com.weaponlin.dsl;
 
+import com.weaponlin.dsl.builder.DeleteBuilder;
+import com.weaponlin.dsl.builder.InsertBuilder;
 import com.weaponlin.dsl.builder.SelectBuilder;
+import com.weaponlin.dsl.builder.UpdateBuilder;
 
 /**
  * TODO
@@ -11,16 +14,16 @@ public class DSL {
         return new SelectBuilder();
     }
 
-
-    public static void update() {
-
+    public static InsertBuilder insert() {
+        return new InsertBuilder();
     }
 
-    public static void delete() {
 
+    public static UpdateBuilder update() {
+        return new UpdateBuilder();
     }
 
-    public static void insert() {
-
+    public static DeleteBuilder delete() {
+        return new DeleteBuilder();
     }
 }

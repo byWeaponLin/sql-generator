@@ -11,8 +11,10 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
+import static com.weaponlin.dsl.operand.table.TableOperand.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
@@ -67,6 +69,11 @@ public class SelectBuilder implements Serializable, Builder {
 
     public FromBuilder from(TableOperand operand) {
         return new FromBuilder(operand, this);
+    }
+
+    public FromBuilder from(String table) {
+        checkArgument(StringUtils.isNotBlank(table), "table name can not be empty");
+        return from(table(table));
     }
 
     @Override

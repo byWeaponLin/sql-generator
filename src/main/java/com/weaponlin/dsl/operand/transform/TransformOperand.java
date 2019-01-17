@@ -24,27 +24,27 @@ public abstract class TransformOperand extends Operand {
         super(name);
     }
 
-    public ExpressionOperand ge(TransformOperand operand) {
+    public CompareExpressionOperand ge(TransformOperand operand) {
         return new CompareExpressionOperand(this, GE, operand);
     }
 
-    public ExpressionOperand gt(TransformOperand operand) {
+    public CompareExpressionOperand gt(TransformOperand operand) {
         return new CompareExpressionOperand(this, GT, operand);
     }
 
-    public ExpressionOperand eq(TransformOperand operand) {
+    public CompareExpressionOperand eq(TransformOperand operand) {
         return new CompareExpressionOperand(this, EQ, operand);
     }
 
-    public ExpressionOperand neq(TransformOperand operand) {
+    public CompareExpressionOperand neq(TransformOperand operand) {
         return new CompareExpressionOperand(this, NEQ, operand);
     }
 
-    public ExpressionOperand le(TransformOperand operand) {
+    public CompareExpressionOperand le(TransformOperand operand) {
         return new CompareExpressionOperand(this, LE, operand);
     }
 
-    public ExpressionOperand lt(TransformOperand operand) {
+    public CompareExpressionOperand lt(TransformOperand operand) {
         return new CompareExpressionOperand(this, LT, operand);
     }
 
@@ -53,7 +53,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand like(VariableOperand operand) {
+    public LikeExpressionOperand like(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.NONE);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -63,7 +63,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _like(VariableOperand operand) {
+    public LikeExpressionOperand _like(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.LEFT);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -73,7 +73,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand like_(VariableOperand operand) {
+    public LikeExpressionOperand like_(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.RIGHT);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -83,7 +83,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _like_(VariableOperand operand) {
+    public LikeExpressionOperand _like_(VariableOperand operand) {
         decorateParameter(operand, LIKE, LikeOption.ALL);
         return new LikeExpressionOperand(this, LIKE, operand);
     }
@@ -93,7 +93,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand notLike(VariableOperand operand) {
+    public LikeExpressionOperand notLike(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.NONE);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -113,7 +113,7 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand notLike_(VariableOperand operand) {
+    public LikeExpressionOperand notLike_(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.RIGHT);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
@@ -123,28 +123,28 @@ public abstract class TransformOperand extends Operand {
      * @param operand
      * @return
      */
-    public ExpressionOperand _notLike_(VariableOperand operand) {
+    public LikeExpressionOperand _notLike_(VariableOperand operand) {
         decorateParameter(operand, NOT_LIKE, LikeOption.ALL);
         return new LikeExpressionOperand(this, NOT_LIKE, operand);
     }
 
-    public ExpressionOperand isNull() {
+    public CompareExpressionOperand isNull() {
         return new CompareExpressionOperand(this, IS_NULL, null);
     }
 
-    public ExpressionOperand isNotNull() {
+    public CompareExpressionOperand isNotNull() {
         return new CompareExpressionOperand(this, IS_NOT_NULL, null);
     }
 
-    public ExpressionOperand in(TransformOperand operand) {
+    public InExpressionOperand in(TransformOperand operand) {
         return new InExpressionOperand(this, IN, operand);
     }
 
-    public ExpressionOperand notIn(TransformOperand operand) {
+    public InExpressionOperand notIn(TransformOperand operand) {
         return new InExpressionOperand(this, NOT_IN, operand);
     }
 
-    public ExpressionOperand betweenAnd(TransformOperand value1, TransformOperand value2) {
+    public BetweenExpressionOperand betweenAnd(TransformOperand value1, TransformOperand value2) {
         return new BetweenExpressionOperand(this, value1, value2);
     }
 

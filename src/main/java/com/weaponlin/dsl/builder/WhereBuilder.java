@@ -23,13 +23,12 @@ import static java.util.stream.Collectors.*;
 import static java.util.stream.Collectors.joining;
 
 /**
- * TODO add group by, having count, limit
+ * TODO having count
  */
 public class WhereBuilder implements Serializable, Builder {
     private static final long serialVersionUID = 1826524948263871298L;
 
-    private final SelectBuilder selectBuilder;
-    private final FromBuilder fromBuilder;
+    private Builder previousBuilder;
     private final List<ExpressionOperand> operands = Lists.newArrayList();
     private volatile BooleanOperator booleanIdentifier;
 
@@ -37,9 +36,8 @@ public class WhereBuilder implements Serializable, Builder {
 
     private List<VariableOperand> limitOperands;
 
-    WhereBuilder(SelectBuilder selectBuilder, FromBuilder fromBuilder) {
-        this.selectBuilder = checkNotNull(selectBuilder, "select builder shouldn't be null");
-        this.fromBuilder = checkNotNull(fromBuilder, "from builder shouldn't be null");
+    WhereBuilder(Builder previousBuilder) {
+        this.previousBuilder = checkNotNull(previousBuilder, "previousBuilder can not be null");
     }
 
     public WhereBuilder and(ExpressionOperand operand) {
@@ -78,7 +76,7 @@ public class WhereBuilder implements Serializable, Builder {
         return this;
     }
 
-    public WhereBuilder limit(Integer limit) {
+    public WhereBuilder limit(@NonNull Integer limit) {
         this.limitOperands = Lists.newArrayList(value(limit));
         return this;
     }
@@ -128,11 +126,11 @@ public class WhereBuilder implements Serializable, Builder {
 
     @Override
     public String toString() {
-        return conditionString() + groupByString() + limitString();
+        return previousBuilder.toString() + conditionString() + groupByString() + limitString();
     }
 
     @Override
     public String build() {
-        return selectBuilder.toString() + fromBuilder.toString() + this.toString();
+        return toString();
     }
 }
