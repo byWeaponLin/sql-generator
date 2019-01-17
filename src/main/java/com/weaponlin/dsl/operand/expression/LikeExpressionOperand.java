@@ -2,9 +2,14 @@ package com.weaponlin.dsl.operand.expression;
 
 import com.weaponlin.dsl.enums.CompareOperator;
 import com.weaponlin.dsl.operand.transform.TransformOperand;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.util.Collection;
+import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static java.util.stream.Collectors.toList;
 
 public class LikeExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = -1175028327903814931L;
@@ -21,8 +26,10 @@ public class LikeExpressionOperand extends ExpressionOperand {
         this.left = left;
         this.operator = operator;
         this.right = right;
-        // TODO set parameters
-
+        super.parameters = Stream.of(left.getParameters(), right.getParameters())
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList());
     }
 
     @Override

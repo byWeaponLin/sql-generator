@@ -1,31 +1,32 @@
 package com.weaponlin.dsl.builder;
 
 import com.google.common.collect.Lists;
+import com.weaponlin.dsl.SQLParameter;
 import com.weaponlin.dsl.enums.BooleanOperator;
+import com.weaponlin.dsl.operand.Operand;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.transform.ColumnOperand;
-import com.weaponlin.dsl.operand.transform.PlaceholderOperand;
 import com.weaponlin.dsl.operand.transform.TransformOperand;
 import com.weaponlin.dsl.operand.transform.VariableOperand;
 import lombok.NonNull;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.tuple.Pair;
 
-import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.weaponlin.dsl.operand.transform.PlaceholderOperand.*;
-import static java.util.stream.Collectors.*;
+import static com.weaponlin.dsl.operand.transform.PlaceholderOperand.value;
 import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
 /**
  * TODO having count
  */
-public class WhereBuilder implements Serializable, Builder {
+public class WhereBuilder implements Builder {
     private static final long serialVersionUID = 1826524948263871298L;
 
     private Builder previousBuilder;
@@ -130,7 +131,27 @@ public class WhereBuilder implements Serializable, Builder {
     }
 
     @Override
-    public String build() {
-        return toString();
+    public SQLParameter build() {
+        return new SQLParameter(toString(), getParameters());
+    }
+
+    @Override
+    public List<Object> getParameters() {
+        List<Object> conditionParameters = Optional.ofNullable(operands).map(ops -> ops.stream()
+                .map(ExpressionOperand::getParameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList())
+        ).orElse(Lists.newArrayList());
+        List<Object> limitParameters = Optional.ofNullable(limitOperands).map(ops -> ops.stream()
+                .map(Operand::getParameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList())
+        ).orElse(Lists.newArrayList());
+        return Stream.of(previousBuilder.getParameters(), conditionParameters, limitParameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList());
     }
 }

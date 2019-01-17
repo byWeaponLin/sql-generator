@@ -1,9 +1,10 @@
 package com.weaponlin.dsl.builder;
 
+import com.weaponlin.dsl.SQLParameter;
 import com.weaponlin.dsl.operand.table.TableOperand;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serializable;
+import java.util.List;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -12,7 +13,7 @@ import static com.weaponlin.dsl.operand.table.TableOperand.table;
 /**
  * TODO
  */
-public class DeleteBuilder implements Serializable, Builder {
+public class DeleteBuilder implements Builder {
     private static final long serialVersionUID = 3648144059870595764L;
 
     public DeleteBuilder() {
@@ -34,7 +35,12 @@ public class DeleteBuilder implements Serializable, Builder {
     }
 
     @Override
-    public String build() {
+    public SQLParameter build() {
         throw new UnsupportedOperationException("DeleteBuilder not support this operation");
+    }
+
+    @Override
+    public List<Object> getParameters() {
+        return null;
     }
 }

@@ -1,14 +1,17 @@
 package com.weaponlin.dsl.builder;
 
+import com.google.common.collect.Lists;
+import com.weaponlin.dsl.SQLParameter;
 import com.weaponlin.dsl.operand.table.TableOperand;
 import lombok.Getter;
 
-import java.io.Serializable;
+import java.util.List;
+import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 @Getter
-public class FromBuilder implements Serializable, Builder {
+public class FromBuilder implements Builder {
     private static final long serialVersionUID = -7640575610110436283L;
 
     private TableOperand operand;
@@ -35,7 +38,13 @@ public class FromBuilder implements Serializable, Builder {
     }
 
     @Override
-    public String build() {
-        return toString();
+    public SQLParameter build() {
+        return new SQLParameter(toString(), getParameters());
+    }
+
+    @Override
+    public List<Object> getParameters() {
+        checkNotNull(previousBuilder, "PreviousBuilder can not be null");
+        return Optional.ofNullable(previousBuilder.getParameters()).orElse(Lists.newArrayList());
     }
 }

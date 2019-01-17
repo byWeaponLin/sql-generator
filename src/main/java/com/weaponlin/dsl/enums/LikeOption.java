@@ -4,12 +4,15 @@ import lombok.AllArgsConstructor;
 
 import java.util.Optional;
 
+/**
+ * TODO REMOVE SINGLE QUOTES
+ */
 @AllArgsConstructor
 public enum LikeOption {
-    NONE("'%s'"),
-    LEFT("'%%%s'"),
-    RIGHT("'%s%%'"),
-    ALL("'%%%s%%'"),
+    NONE("%s"),
+    LEFT("%%%s"),
+    RIGHT("%s%%"),
+    ALL("%%%s%%"),
     ;
 
     private String formatter;

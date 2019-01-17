@@ -2,6 +2,12 @@ package com.weaponlin.dsl.operand.expression;
 
 import com.weaponlin.dsl.enums.CompareOperator;
 import com.weaponlin.dsl.operand.transform.TransformOperand;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.util.Collection;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class InExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = 3683824947894772826L;
@@ -16,6 +22,10 @@ public class InExpressionOperand extends ExpressionOperand {
         this.left = left;
         this.operator = operator;
         this.right = right;
+        super.parameters = Stream.of(left.getParameters(), right.getParameters())
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList());
     }
 
     @Override

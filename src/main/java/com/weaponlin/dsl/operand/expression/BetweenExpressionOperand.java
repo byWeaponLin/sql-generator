@@ -1,7 +1,13 @@
 package com.weaponlin.dsl.operand.expression;
 
-import com.weaponlin.dsl.operand.transform.TransformOperand;
 import com.weaponlin.dsl.enums.CompareOperator;
+import com.weaponlin.dsl.operand.transform.TransformOperand;
+import org.apache.commons.collections.CollectionUtils;
+
+import java.util.Collection;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class BetweenExpressionOperand extends ExpressionOperand {
     private static final long serialVersionUID = -5917770564059569617L;
@@ -15,6 +21,10 @@ public class BetweenExpressionOperand extends ExpressionOperand {
         this.left = left;
         this.value1 = value1;
         this.value2 = value2;
+        super.parameters = Stream.of(left.getParameters(), value1.getParameters(), value2.getParameters())
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList());
     }
 
     @Override

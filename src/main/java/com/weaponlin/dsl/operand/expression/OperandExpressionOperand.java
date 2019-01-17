@@ -14,8 +14,8 @@ public class OperandExpressionOperand extends ExpressionOperand {
     public OperandExpressionOperand(@NonNull TransformOperand operand) {
         super(operand.getName());
         this.operand = operand;
-        super.parameters = Optional.ofNullable(operand.getParameters()).orElse(Lists.newArrayList());
         this.alias = operand.getAlias();
+        super.parameters = Optional.ofNullable(operand.getParameters()).orElse(Lists.newArrayList());
     }
 
     @Override

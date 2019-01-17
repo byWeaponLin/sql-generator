@@ -3,11 +3,17 @@ package com.weaponlin.dsl.operand;
 import lombok.Getter;
 
 import java.io.Serializable;
+import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public abstract class Operand implements Serializable {
     private static final long serialVersionUID = -3309665656541573178L;
+
+    /**
+     * TODO IMPORTANT
+     */
+    protected List<Object> parameters;
 
     @Getter
     protected String name;
@@ -20,6 +26,9 @@ public abstract class Operand implements Serializable {
     /**
      * TODO getParameters
      */
+    public List<Object> getParameters() {
+        return parameters;
+    }
 
     public abstract String toString(boolean hasAlias);
 

@@ -1,24 +1,26 @@
 package com.weaponlin.dsl.builder;
 
-import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
+import com.weaponlin.dsl.SQLParameter;
+import com.weaponlin.dsl.operand.Operand;
 import com.weaponlin.dsl.operand.table.TableOperand;
 import com.weaponlin.dsl.operand.transform.ColumnOperand;
 import com.weaponlin.dsl.operand.transform.PlaceholderOperand;
 import com.weaponlin.dsl.operand.transform.VariableOperand;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.google.common.base.Preconditions.*;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
 import static java.util.stream.Collectors.joining;
 
-public class InsertBuilder implements Serializable, Builder {
+public class InsertBuilder implements Builder {
     private static final long serialVersionUID = -6682031211557475666L;
 
     private TableOperand table;
@@ -62,7 +64,7 @@ public class InsertBuilder implements Serializable, Builder {
         checkState(columns.size() > 0, "columns's size must be greater than zero");
         checkState(values.size() > 0, "values's size must be greater than zero");
         checkState(columns.size() == values.size(),
-                "Illegal SQL, columns's size is not equal to values'size, column size = %s, value size = %s",
+                "Illegal SQLParameter, columns's size is not equal to values'size, column size = %s, value size = %s",
                 columns.size(),
                 values.size());
 
@@ -74,7 +76,16 @@ public class InsertBuilder implements Serializable, Builder {
     }
 
     @Override
-    public String build() {
-        return toString();
+    public SQLParameter build() {
+        return new SQLParameter(toString(), getParameters());
+    }
+
+    @Override
+    public List<Object> getParameters() {
+        return values.stream()
+                .map(Operand::getParameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 }

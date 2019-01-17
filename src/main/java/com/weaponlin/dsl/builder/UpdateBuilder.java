@@ -1,19 +1,23 @@
 package com.weaponlin.dsl.builder;
 
 import com.google.common.collect.Lists;
+import com.weaponlin.dsl.SQLParameter;
 import com.weaponlin.dsl.enums.CompareOperator;
 import com.weaponlin.dsl.operand.expression.CompareExpressionOperand;
+import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.table.TableOperand;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 import static com.google.common.base.Preconditions.*;
 import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
 
-public class UpdateBuilder implements Serializable, Builder {
+public class UpdateBuilder implements Builder {
     private static final long serialVersionUID = 4651243308668163270L;
 
     private TableOperand table;
@@ -56,7 +60,16 @@ public class UpdateBuilder implements Serializable, Builder {
     }
 
     @Override
-    public String build() {
-        return toString();
+    public SQLParameter build() {
+        return new SQLParameter(toString(), getParameters());
+    }
+
+    @Override
+    public List<Object> getParameters() {
+        return assignments.stream()
+                .map(ExpressionOperand::getParameters)
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(toList());
     }
 }

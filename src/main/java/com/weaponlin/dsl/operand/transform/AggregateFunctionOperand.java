@@ -24,6 +24,7 @@ public class AggregateFunctionOperand extends FunctionOperand {
         super(operand.getName());
         this.operand = operand;
         this.aggregate = aggregate;
+        super.parameters = operand.getParameters();
     }
 
     public static AggregateFunctionOperand max(String column) {

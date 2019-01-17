@@ -17,11 +17,6 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 public abstract class TransformOperand extends Operand {
     private static final long serialVersionUID = 8510012843009307113L;
 
-    /**
-     * TODO IMPORTANT
-     */
-    protected List<Object> parameters;
-
     @Getter
     protected String alias;
 
@@ -178,6 +173,7 @@ public abstract class TransformOperand extends Operand {
     }
 
     /**
+     * TODO REMOVE
      * TODO insert child expression
      *
      * @return
@@ -187,10 +183,6 @@ public abstract class TransformOperand extends Operand {
     }
 
     public abstract ExpressionOperand toExpression();
-
-    public List<Object> getParameters() {
-        return parameters;
-    }
 
     @Override
     public TransformOperand as(String alias) {
@@ -214,6 +206,10 @@ public abstract class TransformOperand extends Operand {
         checkNotNull(operand, "VariableOperand can not be null");
         List<Object> parameters = operand.getRealParameters();
         checkNotNull(parameters, "VariableOperand's parameters can not be null");
-        parameters.set(0, likeOption.format(parameters.get(0)));
+        String str = likeOption.format(parameters.get(0));
+        if (operand instanceof ValueOperand) {
+            str = "'" + str + "'";
+        }
+        parameters.set(0, str);
     }
 }

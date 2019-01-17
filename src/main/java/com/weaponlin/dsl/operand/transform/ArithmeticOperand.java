@@ -4,11 +4,12 @@ import com.google.common.collect.Lists;
 import com.weaponlin.dsl.enums.ArithmeticOperator;
 import com.weaponlin.dsl.operand.expression.ExpressionOperand;
 import com.weaponlin.dsl.operand.expression.OperandExpressionOperand;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -25,9 +26,10 @@ public class ArithmeticOperand extends TransformOperand {
         this.left = left;
         this.right = right;
         this.operator = operator;
-        List<Object> objects = Optional.ofNullable(left.getParameters()).orElse(Lists.newArrayList());
-        objects.addAll(Optional.ofNullable(right.getParameters()).orElse(Collections.emptyList()));
-        super.parameters = objects;
+        super.parameters = Stream.of(left.getParameters(), right.getParameters())
+                .filter(CollectionUtils::isNotEmpty)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.weaponlin.dsl.builder;
 
 /**
- * TODO Generic SQL
+ * TODO Generic SQLParameter
  */
 public class GenericBuilder {
 }
