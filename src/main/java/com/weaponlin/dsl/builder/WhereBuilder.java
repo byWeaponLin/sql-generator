@@ -31,7 +31,7 @@ public class WhereBuilder implements Serializable, Builder {
     private final SelectBuilder selectBuilder;
     private final FromBuilder fromBuilder;
     private final List<ExpressionOperand> operands = Lists.newArrayList();
-    private volatile BooleanOperator booleanIdentifier = BooleanOperator.AND;
+    private volatile BooleanOperator booleanIdentifier;
 
     private List<ColumnOperand> groupByColumns = Lists.newArrayList();
 
