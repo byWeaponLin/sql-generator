@@ -20,10 +20,12 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column("id").column("name").column("score").build();
         assertEquals("SELECT id, name, score", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "name", "score"), getProperties(sqlParameter));
 
         sqlParameter = DSL.select().column("id", "name", "score").build();
         assertEquals("SELECT id, name, score", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "name", "score"), getProperties(sqlParameter));
     }
 
     @Test
@@ -31,10 +33,12 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column(name("id")).column(name("name").as("nm")).column(name("score")).build();
         assertEquals("SELECT id, name AS nm, score", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "nm", "score"), getProperties(sqlParameter));
 
         sqlParameter = DSL.select().column(name("id"), name("name").as("nm"), name("score")).build();
         assertEquals("SELECT id, name AS nm, score", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "nm", "score"), getProperties(sqlParameter));
     }
 
     @Test
@@ -42,6 +46,7 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column("id").column(name("name").as("nm")).column("score").build();
         assertEquals("SELECT id, name AS nm, score", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "nm", "score"), getProperties(sqlParameter));
     }
 
     @Test
@@ -57,6 +62,7 @@ public class SelectBuilderTest extends BaseTest {
                 .build();
         assertEquals("SELECT id, name AS nm, MAX(score) AS maxScore, score + 10 AS newScore, name LIKE ?, age > 15, name LIKE '林%'", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList("林%"), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("id", "nm", "maxScore", "newScore", "name LIKE ?", "age > 15", "name LIKE '林%'"), getProperties(sqlParameter));
     }
 
     @Test
@@ -64,10 +70,12 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column(max("score").as("max").ge(values(90)).as("maxScore")).build();
         assertEquals("SELECT MAX(score) >= 90 AS maxScore", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("maxScore"), getProperties(sqlParameter));
 
         sqlParameter = DSL.select().column(max("score").as("max")).build();
         assertEquals("SELECT MAX(score) AS max", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("max"), getProperties(sqlParameter));
     }
 
     @Test
@@ -75,6 +83,7 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column(name("name").like_(PlaceholderOperand.value("林")).as("TheSameName")).build();
         assertEquals("SELECT name LIKE ? AS TheSameName", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList("林%"), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("TheSameName"), getProperties(sqlParameter));
     }
 
     @Test
@@ -82,9 +91,11 @@ public class SelectBuilderTest extends BaseTest {
         SQLParameter sqlParameter = DSL.select().column(name("age").in(PlaceholderOperand.values(11, 12, 13)).as("TheSameAge")).build();
         assertEquals("SELECT age IN (?, ?, ?) AS TheSameAge", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(11, 12, 13), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("TheSameAge"), getProperties(sqlParameter));
 
         sqlParameter = DSL.select().column(name("age").in(values(11, 12, 13)).as("TheSameAge")).build();
         assertEquals("SELECT age IN (11, 12, 13) AS TheSameAge", sqlParameter.getSql());
         assertEquals2(Lists.newArrayList(), sqlParameter.getParameters());
+        assertEquals2(Lists.newArrayList("TheSameAge"), getProperties(sqlParameter));
     }
 }

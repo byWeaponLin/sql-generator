@@ -1,11 +1,14 @@
 package com.weaponlin.dsl;
 
+import com.weaponlin.dsl.builder.SelectBuilder;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class BaseTest {
     @Rule
@@ -23,5 +26,12 @@ public class BaseTest {
         for (int i = 0; i < actualParameters.size(); i++) {
             assertEquals(expectedParameters.get(i), actualParameters.get(i));
         }
+    }
+
+    protected List<Object> getProperties(SQLParameter sqlParameter) {
+        assertNotNull(sqlParameter);
+        return sqlParameter.getRowMaps().stream()
+                .map(SelectBuilder.RowMap::getProperty)
+                .collect(Collectors.toList());
     }
 }

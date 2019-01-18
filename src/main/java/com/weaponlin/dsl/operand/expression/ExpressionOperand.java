@@ -12,22 +12,9 @@ import static org.apache.commons.lang3.StringUtils.*;
 public abstract class ExpressionOperand extends Operand {
     private static final long serialVersionUID = -6216349853355952178L;
 
-    /**
-     * TODO add alias
-     */
-    protected String alias;
-
-    @Getter
-    protected List<Object> parameters;
-
     ExpressionOperand(String name) {
         super(name);
     }
-
-    /**
-     * TODO
-     */
-//    abstract void parameters();
 
     /**
      * TODO add if...else

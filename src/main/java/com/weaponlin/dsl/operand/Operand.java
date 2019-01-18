@@ -13,7 +13,11 @@ public abstract class Operand implements Serializable {
     /**
      * TODO IMPORTANT
      */
+    @Getter
     protected List<Object> parameters;
+
+    @Getter
+    protected String alias;
 
     @Getter
     protected String name;
@@ -24,7 +28,7 @@ public abstract class Operand implements Serializable {
     }
 
     /**
-     * TODO getParameters
+     * getParameters
      */
     public List<Object> getParameters() {
         return parameters;
@@ -35,4 +39,9 @@ public abstract class Operand implements Serializable {
     public abstract Operand as(String alias);
 
     protected abstract String getDecoratedAlias(boolean hasAlias);
+
+    /**
+     * TODO
+     */
+//    protected abstract String toResultColumn();
 }

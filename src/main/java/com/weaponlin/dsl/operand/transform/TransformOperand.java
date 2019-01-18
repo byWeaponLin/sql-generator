@@ -17,9 +17,6 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 public abstract class TransformOperand extends Operand {
     private static final long serialVersionUID = 8510012843009307113L;
 
-    @Getter
-    protected String alias;
-
     protected TransformOperand(String name) {
         super(name);
     }
